@@ -2,9 +2,35 @@
 
 @layer utilities {
     .colorRed { color: #ff5a5d;}
+    .colorGray { color: #5E626C; }
+    .colorBlack {color: #25252D}
+    .colordBgRed2 { background-color: #CD0438; }
+    .colorbgRed {background-color: #ff5a5d;}
+    .colorBgPink { color: #FF9B9D; }
+    .colorbg-pink-45 { background-color: rgba(255,155,157,0.45); }
     .colorBg { background-color: #171E26; }
+    .colorBgGray { background-color: #F2F2F4; }
+    .colorNeutral {color: #000000;} 
+
+ .hover\:colorbg-pink-45:hover {
+    background-color: rgba(255,155,157,0.45);
+  }
+
 }
 
 @theme {
     --color-primary-red: #ff5a5d;
+}
+
+.swiper-pagination{
+    margin-top: 10px;
+    position: initial !important;
+}
+
+.swiper-pagination-bullet{
+    background-color: red !important;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: #CD0438;
 }

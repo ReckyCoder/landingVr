@@ -6,14 +6,10 @@ import puertoDeIdeasIMG from '@img/PuertoDeIdeas.png';
 import biceVidaIMG from '@img/BiceVida.png';
 import cajaLosAndesIMG from '@img/CajaLosAndes.png';
 import unicardIMG from '@img/Unicard.png';
-import coordinadorIMG from '@img/cordinador.png';
-import comillaCurvaIMG from '@img/ComillaCurva.png';
-import mobileFestivalIMG from '@img/festivalPuertoDeIdeas.png';
-import "@node_modules/swiper/swiper.css"; 
 
-export default function ConfíanEnNosotros() {
+export default function ConfianEnNosotros() {
     return (
-        <section className="w-full h-[909px] colorBg flex flex-col items-center">
+        <>
             <div className='mt-10'>
                 <h2 className='text-white text-[30px] font-semibold'>{texto.confian}</h2>
             </div>
@@ -58,23 +54,6 @@ export default function ConfíanEnNosotros() {
                     </SwiperSlide>
                 </Swiper>
             </div>
-
-            <div className='mt-20'>
-                <div className='flex flex-col items-center'>
-                    <div>
-                        <p>{texto.testimonios} {texto.nuestros} {texto.clientes}</p>
-                        <img src={coordinadorIMG} alt="" />
-                        <img className='hidden' src={mobileFestivalIMG} alt="" />
-                    </div>
-                    <div>
-                        <img src={comillaCurvaIMG} alt="" />
-                        <p>{texto.loremLong}</p>
-                        <p>{texto.cordinador}</p>
-                        <p>{texto.puertoDeIdeas}</p>
-                        <p>{texto.verProyecto}</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </>
     )
 }

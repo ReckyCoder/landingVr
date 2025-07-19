@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 import ServiciosYConsultoria from './components/ServiciosYConsultoria';
 import Soluciones from './components/Soluciones';
 import UltimosProyectos from './components/UltimosProyectos';
-import ConfíanEnNosotros from './components/ConfíanEnNosotros';
+import Testimonios from './components/Testimonios';
 
 export default function Home() {
 
@@ -61,7 +61,7 @@ export default function Home() {
             <ServiciosYConsultoria/>
             <Soluciones />
             <UltimosProyectos/>
-            <ConfíanEnNosotros/>
+            <Testimonios/>
         </>
     )
 }
