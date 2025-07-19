@@ -9,6 +9,7 @@
       "@json/*": ["./src/assets/json/*"],
       "@pages/*": ["./src/pages/*"],
       "@utils/*": ["./src/utils/*"],
+      "@node_modules/*": ["./node_modules/*"],
     }
   },
   "references": [

@@ -13,6 +13,7 @@ export default defineConfig({
       '@json': path.resolve(__dirname, './src/assets/json'),
       '@pages': path.resolve(__dirname, './src/pages'),
       '@utils': path.resolve(__dirname, './src/utils'),
+      '@node_modules': path.resolve(__dirname, './node_modules'),
     }
   },
   plugins: [

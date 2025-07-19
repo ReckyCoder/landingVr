@@ -8,6 +8,8 @@ import Hamburguer from '@/utils/Hamburguer';
 import { useEffect, useState } from 'react';
 import ServiciosYConsultoria from './components/ServiciosYConsultoria';
 import Soluciones from './components/Soluciones';
+import UltimosProyectos from './components/UltimosProyectos';
+import ConfíanEnNosotros from './components/ConfíanEnNosotros';
 
 export default function Home() {
 
@@ -57,7 +59,9 @@ export default function Home() {
             </div>
 
             <ServiciosYConsultoria/>
-                <Soluciones />
+            <Soluciones />
+            <UltimosProyectos/>
+            <ConfíanEnNosotros/>
         </>
     )
 }
