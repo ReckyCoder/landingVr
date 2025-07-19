@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer utilities {
+    .colorRed { color: #ff5a5d;}
+    .colorBg { background-color: #171E26; }
+}
+
+@theme {
+    
+}
