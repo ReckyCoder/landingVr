@@ -6,6 +6,8 @@ import linkedin from '@img/linkedin.png';
 import texto from '@json/home.json';
 import Hamburguer from '@/utils/Hamburguer';
 import { useEffect, useState } from 'react';
+import ServiciosYConsultoria from './components/ServiciosYConsultoria';
+import Soluciones from './components/Soluciones';
 
 export default function Home() {
 
@@ -53,6 +55,9 @@ export default function Home() {
                 </div>
                 <div className='bg-linear-to-b from-black/80 to-black/80 absolute h-full w-full'></div>
             </div>
+
+            <ServiciosYConsultoria/>
+                <Soluciones />
         </>
     )
 }
