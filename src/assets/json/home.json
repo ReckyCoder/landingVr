@@ -1,4 +1,8 @@
 {
+    "inicio": "Inicio",
+    "nosotros": "Nosotros",
+    "servicios": "Servicios",
+    "casosDeÉxito": "Casos de éxito",
     "bienvenida": "Los desafíos y objetivos de nuestros clientes son también los nuestros. Generamos soluciones simples y de gran impacto. Creemos que la simplicidad es un factor clave en el éxito de los negocios.",
     "siguenos": "Siguenos",
     "trabaja": "Trabaja con nosotros",
@@ -32,5 +36,6 @@
     "testimonios": "Testimonios de",
     "clientes": "Clientes",
     "cordinador": "José Pablo, Coordinador General",
-    "verProyecto": "Ver proyecto"
+    "verProyecto": "Ver proyecto",
+    "partnerShips": "Partnerships"
 }

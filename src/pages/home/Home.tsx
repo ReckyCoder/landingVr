@@ -5,16 +5,19 @@ import conocenos from '@img/conócenos.png';
 import linkedin from '@img/linkedin.png';
 import texto from '@json/home.json';
 import Hamburguer from '@/utils/Hamburguer';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 import ServiciosYConsultoria from './components/ServiciosYConsultoria';
 import Soluciones from './components/Soluciones';
 import UltimosProyectos from './components/UltimosProyectos';
 import Testimonios from './components/Testimonios';
+import Footer from '@/components/Footer';
 
 export default function Home() {
 
-    const [isActivateHamburgerState, setHamburguer] = useState(true);
-    const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(false)
+    const [isActivateHamburgerState, setHamburguer] = useState(false);
+    const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(true)
+
+    const headerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -26,19 +29,24 @@ export default function Home() {
 
     }, [])
 
-    const changeHamburguer = (isActive: boolean) => {
+    const changeHamburguer = (isActive: boolean, headerRef: RefObject<HTMLElement> | null, setIsHeader: React.Dispatch<React.SetStateAction<boolean>>) => {
         setHamburguer(isActive);
+        console.log(headerRef?.current.tagName);
+        if(headerRef?.current.tagName !== 'HEADER'){
+            setIsHeader(false);
+        }
     }
 
     return (
         <>
-            <div className='relative flex flex-col'>
+            <section className='relative flex flex-col'>
                 <div className='absolute flex flex-col items-center w-full z-2'>
-                    <div className='absolute right-10 top-15'>
+                    <div ref={headerRef} className='absolute right-0 pr-10 top-15'>
                         <Hamburguer 
                             isActivateHamburgerState={isActivateHamburgerState}
                             isVisibleHamburguerState={isVisibleHamburguerState}
                             changeHamburguer={changeHamburguer}
+                            headerRef={headerRef}
                         />
                     </div>
                     <img className='w-[81px] md:w-[155px] transition-all duration-500' src={gradient} alt="" />
@@ -56,12 +64,13 @@ export default function Home() {
                     <p className='text-white -rotate-90'>{texto.siguenos}</p>
                 </div>
                 <div className='bg-linear-to-b from-black/80 to-black/80 absolute h-full w-full'></div>
-            </div>
+            </section>
 
             <ServiciosYConsultoria/>
             <Soluciones />
             <UltimosProyectos/>
             <Testimonios/>
+            <Footer/>
         </>
     )
 }

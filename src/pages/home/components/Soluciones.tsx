@@ -1,7 +1,9 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import { useState } from 'react';
 import texto from '@json/home.json';
 import "@node_modules/swiper/swiper.css";
+import 'swiper/css/pagination';
 import computerAndMobileIMG from '@img/computerAndMobile.png';
 import neuronIMG from '@img/neuron.png';
 import circleFragmentIMG from '@img/circleFragment.png';
@@ -89,9 +91,23 @@ export default function Soluciones() {
             </div>
 
             <div className='w-full'>
-                <Swiper slidesPerView={3}>
+                <Swiper 
+                modules={[Pagination]} 
+                breakpoints={{
+                    0: {
+                    slidesPerView: 1,
+                    },
+                    768: {
+                    slidesPerView: 2,
+                    },
+                    1244: {
+                    slidesPerView: 3,
+                    },
+                }}
+                pagination={{ el: '.swiper-pagination', clickable: true }}
+                >
                     {soluciones[categoryActiveState].map((solucion, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={index} className=''>
                             <div className='flex flex-col items-center min-w-[280px] w-[330px] shadow-lg h-[390px] justify-center py-10 my-5 px-[30px] rounded-2xl group hover:-translate-y-3 transition-all duration-300 mx-auto'>
                                 <div className='relative flex items-center justify-center mb-[27px]'>
                                     <img className='group-hover:shadow group-hover:shadow-[0_0px_20px_rgba(255,90,93,0.25)] rounded-[50px]' src={circle} alt="" />
@@ -106,6 +122,7 @@ export default function Soluciones() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
+                <div className="swiper-pagination mt-6 flex justify-center" />
             </div>   
         </section>
     )

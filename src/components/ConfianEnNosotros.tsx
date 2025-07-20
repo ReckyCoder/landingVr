@@ -1,32 +1,35 @@
 import texto from '@json/home.json';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, FreeMode } from 'swiper/modules';
 import bancoEstadoIMG from '@img/bancoEstadoCobranzas.png';
 import puertoDeIdeasIMG from '@img/PuertoDeIdeas.png';
 import biceVidaIMG from '@img/BiceVida.png';
 import cajaLosAndesIMG from '@img/CajaLosAndes.png';
 import unicardIMG from '@img/Unicard.png';
+import 'swiper/css'
 
 export default function ConfianEnNosotros() {
     return (
         <>
-            <div className='mt-10'>
+            <div className='my-20'>
                 <h2 className='text-white text-[30px] font-semibold'>{texto.confian}</h2>
             </div>
 
-            <div className='w-full mt-10'>
-                <Swiper modules={[Autoplay]}
+            <div className='w-full mt-10 flex items-center'>
+                <Swiper 
+                     modules={[Autoplay, FreeMode]}
                     slidesPerView={3}
-                    loop={true}
-                    speed={2000}
+                    loop
+                    speed={3000}
+                    direction='horizontal'             // tiempo alto para movimiento fluido
                     autoplay={{
-                        "delay": 1,
-                        "disableOnInteraction": false,
-                        "pauseOnMouseEnter": false,
-                        "stopOnLastSlide": false,
-                        "waitForTransition": true
+                        delay: 0,              // sin pausa entre transiciones
+                        disableOnInteraction: false,
                     }}
-                    allowTouchMove={false} >
+                     freeMode={true}
+                    allowTouchMove={false}
+                     className='w-full swiper-transition'
+                    >
                     <SwiperSlide>
                         <div>
                             <img className=""  src={bancoEstadoIMG} alt="" />
