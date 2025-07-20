@@ -1,6 +1,6 @@
 export default function DetalleServicios() {
   return (
-    <section className="servicios-detalle px-4 py-10">
+    <section className="servicios-detalle px-4 py-10 mb-10">
       <h1 className="max-w-[700px] mx-auto !text-[32px] leading-[48px] font-normal text-center">
         VR Group es una solución integral para servicios profesionales de marca,
         diseño y desarrollo.

@@ -12,6 +12,8 @@ import Contacto from "@/components/Contacto";
 import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
 import iconCarouselAppianServicios from "@img/servicios/imagenCarouselAppian.png";
 import { useEffect, useState } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export interface OverlayConfig {
   imagenOverlay: string;
@@ -82,7 +84,7 @@ export default function Servicios() {
             modules={[Navigation, Pagination, Autoplay]}
             loop={true}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 400200 }}
+            autoplay={{ delay: 4000 }}
             className="w-full max-w-7xl px-6 !overflow-visible"
           >
             {arrayServiciosItem.map((item, index) => (

@@ -6,6 +6,7 @@
     .colorGray2 { color: #939393;}
     .colorGray3 { color: #767676;}
     .colorGray4 {color: #E5E5E5;}
+    .colorGraySecondary { color: #939393; }
     .colorBlack {color: #25252D}
     .colordBgRed2 { background-color: #CD0438; }
     .colorbgRed {background-color: #ff5a5d;}
@@ -23,6 +24,16 @@
 
 @theme {
    
+    --color-primary-red: #ff5a5d;
+    --color-secondary-gray: #5E626C;
+}
+
+.swiper-transition {
+    .swiper-wrapper {
+    -webkit-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    }
 }
 
 .swiper-pagination{

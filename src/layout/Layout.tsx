@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import ServiciosYConsultoria from "@/pages/home/components/ServiciosYConsultoria";
 import Soluciones from "@/pages/home/components/Soluciones";
 import Header from "@components/Header";
@@ -10,6 +11,7 @@ export default function Layout() {
       <main className="overflow-x-hidden">
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }
