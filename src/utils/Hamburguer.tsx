@@ -56,7 +56,21 @@ export default function Hamburguer({isActivateHamburgerState, isVisibleHamburgue
                                     <li><NavLink to={"/nosotros"} className={({isActive}) => isActive ? 'text-(--color-primary-red) border-b-(--color-primary-red) border-b-2' : ""}>{texto.nosotros}</NavLink></li>
                                     <li><NavLink to={"/servicios"} className={({isActive}) => isActive ? 'text-(--color-primary-red) border-b-(--color-primary-red) border-b-2' : ""}>{texto.servicios}</NavLink></li>
                                 </nav>
-                                <li className='flex flex-row-reverse items-center gap-2'>{texto.trabaja}<img className='w-5 h-auto' src={iconPerson}/></li>
+                                <li className='flex flex-row-reverse items-center gap-2'>
+                                    <NavLink
+                                    to="/trabaja-con-nosotros"
+                                    className={({ isActive }) =>
+                                        `${isActive ? 'text-(--color-primary-red) border-b-2 border-(--color-primary-red)' : ''} flex flex-row-reverse items-center hover:text-(--color-primary-red)`
+                                    }
+                                    >
+                                    {({ isActive }) => (
+                                        <>
+                                        {texto.trabaja}
+                                        <img src={iconPerson} className={`w-6 h-auto me-2 ${isActive ? 'fill-(--color-primary-red)' : ''}`} />
+                                        </>
+                                    )}
+                                    </NavLink>
+                                </li>
                                 <li className='flex items-center flex-row-reverse'>
                                     <NavLink
                                     to="/hablemos"
@@ -67,7 +81,7 @@ export default function Hamburguer({isActivateHamburgerState, isVisibleHamburgue
                                     {({ isActive }) => (
                                         <>
                                         {texto.hablemos}
-                                        <img src={iconComment} className={`w-6 h-auto ml-2 ${isActive ? 'fill-(--color-primary-red)' : ''}`} />
+                                        <img src={iconComment} className={`w-6 h-auto me-2 ${isActive ? 'fill-(--color-primary-red)' : ''}`} />
                                         </>
                                     )}
                                     </NavLink>
@@ -77,7 +91,21 @@ export default function Hamburguer({isActivateHamburgerState, isVisibleHamburgue
                         :
                         (
                             <>
-                                <li className='flex items-center gap-2'>{texto.trabaja}<img className='w-5 h-auto' src={iconPerson}/></li>
+                                <li className='flex items-center gap-2'>
+                                    <NavLink
+                                    to="/trabaja-con-nosotros"
+                                    className={({ isActive }) =>
+                                        `${isActive ? 'text-(--color-primary-red) border-b-2 border-(--color-primary-red)' : ''} flex items-center hover:text-(--color-primary-red)`
+                                    }
+                                    >
+                                    {({ isActive }) => (
+                                        <>
+                                        {texto.trabaja}
+                                        <img src={iconPerson} className={`w-6 h-auto me-2 ${isActive ? 'fill-(--color-primary-red)' : ''}`} />
+                                        </>
+                                    )}
+                                    </NavLink>
+                                </li>
                                 <li className='flex items-center h-full'>
                                     <NavLink
                                     to="/hablemos"
@@ -88,7 +116,7 @@ export default function Hamburguer({isActivateHamburgerState, isVisibleHamburgue
                                     {({ isActive }) => (
                                         <>
                                         {texto.hablemos}
-                                        <img src={iconComment} className={`w-6 h-auto ml-2 ${isActive ? 'fill-(--color-primary-red)' : ''}`} />
+                                        <img src={iconComment} className={`w-6 h-auto mx-2 ${isActive ? 'fill-(--color-primary-red)' : ''}`} />
                                         </>
                                     )}
                                     </NavLink>
