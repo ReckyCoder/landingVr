@@ -4,8 +4,7 @@ import bgHome from "@img/bg-home.png";
 import conocenos from "@img/conócenos.png";
 import linkedin from "@img/linkedin.png";
 import texto from "@json/home.json";
-import Hamburguer from "@/utils/Hamburguer";
-import { useEffect, useRef, useState, type RefObject } from "react";
+import { useEffect, useRef, useState } from "react";
 import ServiciosYConsultoria from "./components/ServiciosYConsultoria";
 import Soluciones from "./components/Soluciones";
 import UltimosProyectos from "./components/UltimosProyectos";
@@ -13,10 +12,9 @@ import Testimonios from "./components/Testimonios";
 import Contacto from "@/components/Contacto";
 
 export default function Home() {
-  const [isActivateHamburgerState, setHamburguer] = useState(false);
   const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(false);
 
-  const headerRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleResize = () => setisVisibleHamburguer(window.innerWidth < 768);
@@ -33,6 +31,7 @@ export default function Home() {
     };
   }, []);
 
+  /*
   const changeHamburguer = (
     isActive: boolean,
     headerRef: RefObject<HTMLElement> | null,
@@ -43,7 +42,7 @@ export default function Home() {
     if (headerRef?.current.tagName !== "HEADER") {
       setIsHeader(false);
     }
-  };
+  };*/
 
   return (
     <>
