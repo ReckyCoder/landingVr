@@ -29,7 +29,7 @@ export default function CarouselHeader({
         modules={[Navigation, Pagination, Autoplay]}
         loop={true}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 500000 }}
+        autoplay={{ delay: 5000 }}
         className="h-full  !overflow-visible"
       >
         {arrayItems.map((item, index) => (
