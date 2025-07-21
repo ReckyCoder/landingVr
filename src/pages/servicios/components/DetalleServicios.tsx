@@ -30,12 +30,22 @@ export default function DetalleServicios({
             key={index}
             className={`flex flex-col justify-center relative px-4 gap-5 ${
               index !== 0
-                ? "md:before:absolute md:before:left-0 md:before:top-[-20px] md:before:bottom-[-20px] md:before:w-px md:before:bg-gray-300"
+                ? `md:before:absolute md:before:left-0 md:before:top-[-20px] md:before:bottom-[-20px]  ${
+                    item.titulo ? "md:before:w-px md:before:bg-gray-300" : ""
+                  } `
                 : ""
             }`}
           >
-            <p className={item.classNameTitulo}>{item.titulo}</p>
-            <p className={item.classNameSubtitulo}>{item.subtitulo}</p>
+            {item.imagen ? (
+              <img className="w-[auto] h-[100px] mx-auto" src={item.imagen} />
+            ) : undefined}
+
+            {item.titulo ? (
+              <>
+                <p className={item.classNameTitulo}>{item.titulo}</p>
+                <p className={item.classNameSubtitulo}>{item.subtitulo}</p>
+              </>
+            ) : undefined}
           </div>
         ))}
       </div>

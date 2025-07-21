@@ -113,6 +113,12 @@ export default function ServiciosDetalle() {
         descripcion:
           "Creamos interfaces visualmente atractivas y funcionales que mejoran la interacción y proporcionan una experiencia de usuario fluida.",
       },
+      {
+        icono: iconDesktop,
+        titulo: "Diseño de interfaz de usuario (UI)",
+        descripcion:
+          "Creamos interfaces visualmente atractivas y funcionales que mejoran la interacción y proporcionan una experiencia de usuario fluida.",
+      },
     ];
 
     setArrayActividades(dataActividades);
@@ -213,6 +219,7 @@ export default function ServiciosDetalle() {
               sliderPerViewDesktop={3}
               sliderPerViewMobile={1}
               className="mt-20"
+              autoPlay={5000}
             />
           </div>
         </article>

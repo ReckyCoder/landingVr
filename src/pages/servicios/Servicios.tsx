@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import TabsServicios from "./components/TabsServicios";
 import TecnologiasServicios from "./components/TecnologiasServicios";
 import DetalleServicios from "./components/DetalleServicios";
@@ -12,7 +11,6 @@ import Contacto from "@/components/Contacto";
 import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
 import iconCarouselAppianServicios from "@img/servicios/imagenCarouselAppian.png";
 import { useEffect, useState } from "react";
-
 
 export interface OverlayConfig {
   imagenOverlay: string;
@@ -28,10 +26,11 @@ export interface CarouselSlideServiciosItem {
 }
 
 export interface DetalleServiciosItem {
-  titulo: string;
+  titulo?: string;
   classNameTitulo?: string;
-  subtitulo: string;
+  subtitulo?: string;
   classNameSubtitulo?: string;
+  imagen?: string;
 }
 
 export default function Servicios() {
@@ -127,7 +126,7 @@ export default function Servicios() {
             modules={[Navigation, Pagination, Autoplay]}
             loop={true}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 500000 }}
+            autoplay={{ delay: 5000 }}
             className="w-full max-w-7xl px-6 !overflow-visible"
           >
             {arrayServiciosItem.map((item, index) => (

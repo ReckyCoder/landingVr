@@ -1,8 +1,8 @@
 // components/ServiciosCarousel.tsx
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/pagination";
+import "swiper/css/navigation";
 import type { ActividadItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
 import type { ReactNode } from "@node_modules/@types/react";
 
@@ -12,6 +12,7 @@ type CardSimpleProps = {
   sliderPerViewDesktop: number;
   sliderPerViewMobile: number;
   children?: ReactNode;
+  autoPlay: number;
 };
 
 export default function CardSimple({
@@ -20,14 +21,15 @@ export default function CardSimple({
   sliderPerViewDesktop,
   sliderPerViewMobile,
   children,
+  autoPlay,
 }: CardSimpleProps) {
   return (
-    <section
-      className={`px-4 md:px-20 mx-auto w-full mx-auto ${className}`}
-    >
+    <section className={`px-4 md:px-20 mx-auto w-full mx-auto ${className}`}>
       <Swiper
-        modules={[Pagination]}
+        loop={false}
+        modules={[Navigation, Pagination, Autoplay]}
         pagination={{ clickable: true }}
+        autoplay={{ delay: autoPlay }}
         spaceBetween={40}
         breakpoints={{
           768: {
