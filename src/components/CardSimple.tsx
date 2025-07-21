@@ -8,11 +8,15 @@ import type { ActividadItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
 type CardSimpleProps = {
   className?: string;
   arrayActividades: ActividadItem[];
+  sliderPerViewDesktop: number;
+  sliderPerViewMobile: number;
 };
 
 export default function CardSimple({
   className,
   arrayActividades,
+  sliderPerViewDesktop,
+  sliderPerViewMobile,
 }: CardSimpleProps) {
   return (
     <section
@@ -24,10 +28,10 @@ export default function CardSimple({
         spaceBetween={40}
         breakpoints={{
           768: {
-            slidesPerView: 3,
+            slidesPerView: sliderPerViewDesktop,
           },
           0: {
-            slidesPerView: 1,
+            slidesPerView: sliderPerViewMobile,
           },
         }}
       >

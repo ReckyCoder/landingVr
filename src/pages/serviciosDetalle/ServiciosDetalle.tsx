@@ -128,7 +128,12 @@ export default function ServiciosDetalle() {
           </h4>
 
           <div>
-            <CardSimple arrayActividades={arrayActividades} className="mt-20" />
+            <CardSimple
+              arrayActividades={arrayActividades}
+              sliderPerViewDesktop={3}
+              sliderPerViewMobile={1}
+              className="mt-20"
+            />
           </div>
         </article>
       </section>
