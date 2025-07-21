@@ -55,14 +55,29 @@ export default function Header() {
     return (
         <header ref={headerRef} className={isHome + styleHeader}>
             <div className='flex justify-center'>
-                <img className='w-[130px]' src={logoVr} alt="" />
+                <img className='w-[130px]' src={logoVr} alt="logo vr" />
             </div>
-            <nav className='invisible md:visible flex list-none gap-4 text-white justify-center'>
-                <li><NavLink to={"/home"} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2 hover:text-(--color-primary-red)' : "hover:text-(--color-primary-red)"}>{texto.inicio}</NavLink></li>
-                <li><NavLink to={"/nosotros"} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2 hover:text-(--color-primary-red)' : "hover:text-(--color-primary-red)"}>{texto.nosotros}</NavLink></li>
-                <li><NavLink to={"/servicios"} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2 hover:text-(--color-primary-red)' : "hover:text-(--color-primary-red)"}>{texto.servicios}</NavLink></li>
+            <nav className='invisible md:visible flex list-none gap-4 text-white justify-center h-full justify-center'>
+                <li className='h-full'>
+                    <NavLink to={"/home"} 
+                        className={({isActive}) => `${isActive ? 'text-(--color-primary-red) border-b-(--color-primary-red) border-b-2' : ""}  items-center flex h-full hover:text-(--color-primary-red)`}>
+                        {texto.inicio}
+                    </NavLink>
+                </li>
+                <li className='h-full'>
+                    <NavLink to={"/nosotros"} 
+                        className={({isActive}) => `${isActive ? 'text-(--color-primary-red) border-b-(--color-primary-red) border-b-2' : ""}  items-center flex h-full hover:text-(--color-primary-red)`}>
+                        {texto.nosotros}
+                    </NavLink>
+                </li>
+                <li className='h-full'>
+                    <NavLink to={"/servicios"} 
+                        className={({isActive}) => `${isActive ? 'text-(--color-primary-red) border-b-(--color-primary-red) border-b-2' : ""}  items-center flex h-full hover:text-(--color-primary-red)`}>
+                        {texto.servicios}
+                    </NavLink>
+                </li>
             </nav>
-            <div className={isVisibleHamburguerState ? 'flex justify-end' : 'flex justify-center'}>
+            <div className={isVisibleHamburguerState ? 'flex justify-end' : 'flex justify-center h-full'}>
                 <Hamburguer 
                     isActivateHamburgerState={isActivateHamburgerState}
                     isVisibleHamburguerState={isVisibleHamburguerState}

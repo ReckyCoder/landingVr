@@ -169,13 +169,17 @@ export default function Nosotros() {
                         <img className='absolute bottom-0 xl:bottom-65 -right-18' src={buttonExperience} alt="" />
                     </div>
                     <div className='mt-50 xl:mt-0 max-w-[540px] mx-auto'>
-                        <div className='flex flex-col gap-y-10'>
-                            <h2 className='font-bold text-[32px]'>
-                                {data.somosDeConfianza.somos} 
-                                <span className='colorRed mx-3'>{data.somosDeConfianza.deConfianza}</span>
-                                {data.somosDeConfianza.trabajarConNosotros}
-                            </h2>
-                            <div className='flex flex-col gap-y-2 text-[14px] leading-[25px]'>
+                        <div className='flex flex-col'>
+                            <div>
+                                <h2 className='font-bold text-[32px]'>
+                                    {data.somosDeConfianza.somos} 
+                                    <span className='colorRed mx-3'>{data.somosDeConfianza.deConfianza}</span>
+                                </h2>
+                                <h2 className='font-bold text-[32px]'>
+                                    {data.somosDeConfianza.trabajarConNosotros}
+                                </h2>
+                            </div>
+                            <div className='flex flex-col gap-y-2 text-[14px] leading-[25px] mt-10'>
                                 <p className='font-bold'>{data.desafiosYObjetivos}</p>
                                 <p>{data.experimentadoEquipo}</p>
                             </div> 
@@ -200,7 +204,7 @@ export default function Nosotros() {
                     </div>
                 </div>
             </section>
-            <section className='px-5'>
+            <section className='px-5 mt-30'>
                 <div className='flex flex-col items-center my-10'>
                     <p className='text-[32px] font-bold'>{data.experienciaDel} <span className='colorRed'>{data.equipo}</span></p>
                     <p className='text-sm colorGray'>{data.miembros}</p>
@@ -240,7 +244,7 @@ export default function Nosotros() {
                         </Swiper>
 
                 </div>
-                <div className='flex justify-center my-20'>
+                <div className='flex justify-center my-40'>
                     <img src={kpi} alt="" />
                 </div>
             </section>

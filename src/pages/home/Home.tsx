@@ -34,7 +34,6 @@ export default function Home() {
         };
     }, [])
 
-
     const changeHamburguer = (isActive: boolean, headerRef: RefObject<HTMLElement> | null, setIsHeader: React.Dispatch<React.SetStateAction<boolean>>) => {
         setHamburguer(isActive);
         console.log(headerRef?.current.tagName);
@@ -42,6 +41,7 @@ export default function Home() {
             setIsHeader(false);
         }
     }
+
 
     return (
         <>
@@ -58,7 +58,7 @@ export default function Home() {
                     <img className='w-[81px] md:w-[155px] transition-all duration-500' src={gradient} alt="" />
                     <img className='top-30 w-[160px] md:w-[308px] md:top-60 absolute transition-all duration-500' src={logoVr} alt="" />
                     <div className='max-w-[560px] text-white'>
-                        <p className='mt-10 text-center'>{texto.bienvenida}</p>
+                        <p className='mt-10 text-center leading-7'>{texto.bienvenida}</p>
                     </div>
                     <img className='mt-20 motion-safe:animate-bounce' src={conocenos} alt="" />
                 </div>

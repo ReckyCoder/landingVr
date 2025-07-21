@@ -30,8 +30,8 @@ export default function CarouselHeader({
         slidesPerView={1}
         loop={true}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 500000 }}
-        className="h-full !overflow-visible"
+        autoplay={{ delay: 5000 }}
+        className="h-full  !overflow-visible"
       >
         {arrayItems.map((item, index) => (
           <SwiperSlide key={index}>
