@@ -12,9 +12,9 @@ type HeaderProps = {
 
 export default function Header({}: HeaderProps) {
   const { pathname } = useLocation();
-  const mode = pathname === "/home" ? "scrollHide" : "fixed";
+  const mode = pathname === "/" ? "scrollHide" : "fixed";
 
-  const isHome = pathname === "/home" ? true : false;
+  const isHome = pathname === "/" ? true : false;
 
   const [showNavbar, setShowNavbar] = useState(mode === "scrollHide");
   const [menuOpen, setMenuOpen] = useState(false); // Estado para el menú hamburguesa
@@ -59,7 +59,7 @@ export default function Header({}: HeaderProps) {
           {/* Menú desktop */}
           <nav className="hidden md:flex gap-8 h-full items-center">
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) =>
                 isActive
                   ? "h-full flex items-center text-[#F16262] font-semibold border-b-2 border-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
@@ -147,7 +147,7 @@ export default function Header({}: HeaderProps) {
         </button>
 
         <NavLink
-          to="/home"
+          to="/"
           onClick={() => setMenuOpen(false)}
           className={({ isActive }) =>
             isActive
