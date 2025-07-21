@@ -15,7 +15,7 @@ export default function CarouselHeader({
   backgroundImage,
 }: CarouselHeaderProps) {
   return (
-    <section className=" relative w-full  min-h-[300px] h-[300px] sm:h-[400px] md:h-[300px] lg:h-[614px] overflow-visible">
+    <section className=" relative w-full  min-h-[300px] h-[300px] sm:h-[400px] md:h-[300px] lg:h-[614px]">
       <img
         src={backgroundImage}
         alt="Fondo"
@@ -27,6 +27,7 @@ export default function CarouselHeader({
 
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
+        slidesPerView={1}
         loop={true}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
@@ -54,12 +55,6 @@ export default function CarouselHeader({
                     className="w-[150px] rounded-[25rem] absolute bottom-[-60px] left-45 -translate-x-1/2"
                     src={item.overlay?.imagenOverlay2}
                   />
-                </div>
-                <div className="container-texto-segundo-servicios-detalle">
-                  <h2 className="text-white text-3xl font-bold mb-4">
-                    {item.titulo}
-                  </h2>
-                  <p className="text-white text-lg">{item.subtitulo}</p>
                 </div>
               </div>
             </div>

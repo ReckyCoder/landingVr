@@ -37,5 +37,57 @@
     "clientes": "Clientes",
     "cordinador": "José Pablo, Coordinador General",
     "verProyecto": "Ver proyecto",
-    "partnerShips": "Partnerships"
+    "partnerShips": "Partnerships",
+    "somosDeConfianza": {
+        "somos": "Somos",
+        "deConfianza": "de confianza",
+        "trabajarConNosotros": "¿Por qué trabajar con nosotros?"
+    },
+    "desafiosYObjetivos": "Los desafíos y objetivos de nuestros clientes son también los nuestros. Generamos soluciones simples y de gran impacto. Creemos que la simplicidad es un factor clave en el éxito de los negocios.",
+    "experimentadoEquipo": "Un experimentado equipo de ingenieros, diseñadores, analistas y expertos en comunicación ayudan a nuestros clientes a cumplir sus objetivos de negocios y sobresalir en el competitivo panorama digital actual.",
+    "nuestroEnfoque": "Nuestro enfoque",
+    "listaNuestroEnfoque": {
+        "item1": {
+            "nombre": "Simplicidad",
+            "descripción": "Generamos  soluciones ​simples y de gran impacto para las organizaciones. ​Tenemos la creencia que lo sencillo es un factor clave en el éxito de los negocios​"
+        },
+        "item2": {
+            "nombre": "Iniciativa y cambio​​",
+            "descripción": "Incentivamos el atreverse, creamos soluciones integrales que transforman la manera de hacer negocios, adaptamos las mejores prácticas de manera creativa, traduciendo la estrategia en acciones eficaces y eficientes.​"
+        },
+        "item3": {
+            "nombre": "Compromiso​​​",
+            "descripción": "Los desafíos de nuestros clientes son también los nuestros; trabajamos para comprender su realidad y nuestro compromiso se basa en el logro de sus objetivos.​"
+        },
+        "item4": {
+            "nombre": "Empatía​​​​",
+            "descripción": "Nuestro equipo de profesionales son comprometidos, enérgicos, empáticos y buscan de manera constante la innovación, facilitando la adaptación y navegación con éxito para nuestros clientes.​​"
+        }
+    },
+    "experienciaDel": "Experiencia del",
+    "equipo": "equipo",
+    "miembros": "Miembros",
+    "listaEquipo": {
+        "socio1": {
+            "cargo": "Socio Fundador",
+            "nombre": "Victor Sagredo"
+        },
+        "socio2": {
+            "cargo": "Service Delivery Lead",
+            "nombre": "Angel Barroyeta"
+        },
+        "socio3": {
+            "cargo": "Consulting Manager",
+            "nombre": "Marco Bertolini"
+        },
+        "socio4": {
+            "cargo": "Technical Lead",
+            "nombre": "Lorem Ipsum"
+        }
+    },
+    "partner": "Nos consideramos un partner para nuestro cliente y nos vinculamos con el negocio.",
+    "nosPreocupamos": "Nos preocupamos por generar relaciones de largo plazo, generando una estrecha relación de confianza y colaboración con nuestros clientes.",
+    "hablemosSobreCómo": "Hablemos sobre cómo impulsar tu negocio",
+    "sabemosQueCadaDesafío": "Sabemos que cada desafío digital es una oportunidad de crecimiento. Nuestro equipo está listo para escucharte y co-crear soluciones que aceleren el éxito de tu empresa. Desde la estrategia hasta la implementación, trabajamos a tu lado para maximizar el impacto de cada proyecto digital.",
+    "juntosDescubramos": "¡Juntos, descubramos nuevas oportunidades!"
 }

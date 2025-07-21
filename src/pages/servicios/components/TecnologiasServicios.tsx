@@ -84,9 +84,9 @@ export default function TecnologiasServicios() {
                 {/* Div rojo que aparece desde abajo hasta mitad */}
                 <div
                   className="absolute bottom-0 left-0 w-full h-1/2 colorbgRed bg-opacity-90 
-      transform translate-y-full group-hover:translate-y-0 
-      transition-transform duration-300 ease-in-out
-      flex items-center justify-center px-4 rounded-[10px]"
+                  transform translate-y-full group-hover:translate-y-0 
+                  transition-transform duration-300 ease-in-out
+                  flex items-center justify-center px-4 rounded-[10px]"
                 >
                   <p className="text-white font-bold text-[12px] leading-[1] tracking-normal">
                     {item.description}

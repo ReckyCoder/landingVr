@@ -10,23 +10,28 @@ import ServiciosYConsultoria from './components/ServiciosYConsultoria';
 import Soluciones from './components/Soluciones';
 import UltimosProyectos from './components/UltimosProyectos';
 import Testimonios from './components/Testimonios';
-import Footer from '@/components/Footer';
+import Contacto from '@/components/Contacto';
 
 export default function Home() {
 
     const [isActivateHamburgerState, setHamburguer] = useState(false);
-    const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(true)
+    const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(false)
 
     const headerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
-        const handleResize = () => {
-            setisVisibleHamburguer(window.innerWidth < 768);
-        };
+         const handleResize = () => setisVisibleHamburguer(window.innerWidth < 768);
 
+        // Ejecutar inmediatamente al montar
+        handleResize();
+
+        // Escuchar eventos de resize
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
 
+        // Limpiar el event listener cuando el componente se desmonte
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, [])
 
     const changeHamburguer = (isActive: boolean, headerRef: RefObject<HTMLElement> | null, setIsHeader: React.Dispatch<React.SetStateAction<boolean>>) => {
@@ -36,6 +41,7 @@ export default function Home() {
             setIsHeader(false);
         }
     }
+
 
     return (
         <>
@@ -52,14 +58,14 @@ export default function Home() {
                     <img className='w-[81px] md:w-[155px] transition-all duration-500' src={gradient} alt="" />
                     <img className='top-30 w-[160px] md:w-[308px] md:top-60 absolute transition-all duration-500' src={logoVr} alt="" />
                     <div className='max-w-[560px] text-white'>
-                        <p className='mt-10 text-center'>{texto.bienvenida}</p>
+                        <p className='mt-10 text-center leading-7'>{texto.bienvenida}</p>
                     </div>
                     <img className='mt-20 motion-safe:animate-bounce' src={conocenos} alt="" />
                 </div>
                 <img className='object-cover h-[900px] w-full' src={bgHome} alt="" />
                 <div className={isVisibleHamburguerState ? 'invisible' : "absolute z-2 bottom-20 left-20 flex flex-col items-center gap-10"}>
                     <a href="https://www.linkedin.com/company/vr-group-chile/" target='_blank'>
-                        <img className='' src={linkedin} alt="" />
+                        <img className='w-[25px] h-[25px]' src={linkedin} alt="" />
                     </a>
                     <p className='text-white -rotate-90'>{texto.siguenos}</p>
                 </div>
@@ -70,7 +76,7 @@ export default function Home() {
             <Soluciones />
             <UltimosProyectos/>
             <Testimonios/>
-            <Footer/>
+            <Contacto/>
         </>
     )
 }

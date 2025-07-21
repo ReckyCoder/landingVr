@@ -11,7 +11,7 @@ import "swiper/css";
 export default function ConfianEnNosotros() {
   return (
     <>
-      <div className="colorBg !h-[368px] colorBg flex flex-col justify-center gap-10">
+      <div className="colorBg !h-[368px] w-full colorBg flex flex-col justify-center gap-10">
         <h2 className="text-white text-[30px] font-semibold text-center">
           {texto.confian}
         </h2>

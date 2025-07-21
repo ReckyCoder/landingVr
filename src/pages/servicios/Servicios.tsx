@@ -12,8 +12,7 @@ import Contacto from "@/components/Contacto";
 import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
 import iconCarouselAppianServicios from "@img/servicios/imagenCarouselAppian.png";
 import { useEffect, useState } from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 
 export interface OverlayConfig {
   imagenOverlay: string;

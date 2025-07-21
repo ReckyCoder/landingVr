@@ -4,12 +4,14 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import type { ActividadItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
+import type { ReactNode } from "@node_modules/@types/react";
 
 type CardSimpleProps = {
   className?: string;
   arrayActividades: ActividadItem[];
   sliderPerViewDesktop: number;
   sliderPerViewMobile: number;
+  children?: ReactNode;
 };
 
 export default function CardSimple({
@@ -17,10 +19,11 @@ export default function CardSimple({
   arrayActividades,
   sliderPerViewDesktop,
   sliderPerViewMobile,
+  children,
 }: CardSimpleProps) {
   return (
     <section
-      className={`px-4 md:px-20 mx-auto max-w-[1200px] mx-auto ${className}`}
+      className={`px-4 md:px-20 mx-auto w-full mx-auto ${className}`}
     >
       <Swiper
         modules={[Pagination]}
@@ -47,6 +50,7 @@ export default function CardSimple({
               <p className="font-normal text-[14px] leading-[25px] tracking-[0px] mt-5 mx-auto md:mx-0 max-w-[90%] colorGray">
                 {servicio.descripcion}
               </p>
+              {children}
             </div>
           </SwiperSlide>
         ))}

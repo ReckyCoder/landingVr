@@ -1,8 +1,9 @@
 import texto from '@json/home.json';
 import hamburguer from '@img/iconHamburguer.png';
 import iconPerson from '@img/iconPerson.svg';
-import iconComment from '@img/iconComment.png';
+import iconComment from '@img/iconComment.svg';
 import {  useState, type RefObject } from 'react';
+import { NavLink, useLocation } from '@node_modules/react-router/dist/development';
 
 interface HamburguerIT {
     isActivateHamburgerState: boolean; 
@@ -20,7 +21,7 @@ export default function Hamburguer({isActivateHamburgerState, isVisibleHamburgue
     const visibilityHamburguer =
             isActivateHamburgerState && isVisibleHamburguerState
                 ? "absolute top-10 w-2xl items-end"
-                : isVisibleHamburguerState
+                : !isActivateHamburgerState && isVisibleHamburguerState
                 ? "absolute -top-100 w-2xl items-end"
                 : "";
     const styleNav = "flex list-none gap-4 text-white flex-1/3 justify-center";
@@ -51,19 +52,47 @@ export default function Hamburguer({isActivateHamburgerState, isVisibleHamburgue
                         (
                             <div className='colorBg px-10 py-5 flex flex-col gap-y-3 font-bold'>
                                 <nav className={isActivateHamburgerState ? styleNav + " flex-col text-end" : styleNav + " invisible md:visible"}>
-                                    <li>{texto.inicio}</li>
-                                    <li>{texto.nosotros}</li>
-                                    <li>{texto.servicios}</li>
+                                    <li><NavLink to={"/home"} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2' : ""}>{texto.inicio}</NavLink></li>
+                                    <li><NavLink to={"/nosotros"} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2' : ""}>{texto.nosotros}</NavLink></li>
+                                    <li><NavLink to={"/servicios"} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2' : ""}>{texto.servicios}</NavLink></li>
                                 </nav>
-                                <li className={'flex flex-row-reverse items-center gap-2'}>{texto.trabaja}<img className='w-5 h-auto' src={iconPerson}/></li>
-                                <li className={'flex flex-row-reverse items-center'}>{texto.hablemos}<img className='w-10 h-auto' src={iconComment}/></li>
+                                <li className='flex flex-row-reverse items-center gap-2'>{texto.trabaja}<img className='w-5 h-auto' src={iconPerson}/></li>
+                                <li className='flex items-center flex-row-reverse'>
+                                    <NavLink
+                                    to="/hablemos"
+                                    className={({ isActive }) =>
+                                        `${isActive ? 'text-(--color-primary-red) border-b-2 border-(--color-primary-red)' : ''} flex flex-row-reverse items-center hover:text-(--color-primary-red)`
+                                    }
+                                    >
+                                    {({ isActive }) => (
+                                        <>
+                                        {texto.hablemos}
+                                        <img src={iconComment} className={`w-6 h-auto ml-2 ${isActive ? 'fill-(--color-primary-red)' : ''}`} />
+                                        </>
+                                    )}
+                                    </NavLink>
+                                </li>
                             </div>
                         )
                         :
                         (
                             <>
-                                <li className={'flex items-center gap-2'}>{texto.trabaja}<img className='w-5 h-auto' src={iconPerson}/></li>
-                                <li className={'flex items-center'}>{texto.hablemos}<img className='w-10 h-auto' src={iconComment}/></li>
+                                <li className='flex items-center gap-2'>{texto.trabaja}<img className='w-5 h-auto' src={iconPerson}/></li>
+                                <li className='flex items-center h-full'>
+                                    <NavLink
+                                    to="/hablemos"
+                                    className={({ isActive }) =>
+                                        `${isActive ? 'text-(--color-primary-red) border-b-2 border-(--color-primary-red)' : ''} flex items-center h-full hover:text-(--color-primary-red)`
+                                    }
+                                    >
+                                    {({ isActive }) => (
+                                        <>
+                                        {texto.hablemos}
+                                        <img src={iconComment} className={`w-6 h-auto ml-2 ${isActive ? 'fill-(--color-primary-red)' : ''}`} />
+                                        </>
+                                    )}
+                                    </NavLink>
+                                </li>
                             </>
                         )
                     }

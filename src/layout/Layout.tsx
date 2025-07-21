@@ -1,6 +1,4 @@
 import Footer from "@/components/Footer";
-import ServiciosYConsultoria from "@/pages/home/components/ServiciosYConsultoria";
-import Soluciones from "@/pages/home/components/Soluciones";
 import Header from "@components/Header";
 import { Outlet } from "react-router";
 

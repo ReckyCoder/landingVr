@@ -6,9 +6,9 @@ import texto from '@json/home.json';
 export default function Footer() {
     return (
         <footer className='colorBg flex justify-between py-4 md:px-32 items-center'>
-            <div className='flex items-center not-first:gap-4'>
+            <div className='flex items-center gap-5'>
                 <img className='w-0 invisible md:visible md:w-[130px]' src={logoVr} alt="" />
-                <p className='ms-6'>{texto.partnerShips}</p>
+                <p className='text-white'>{texto.partnerShips}</p>
                 <img className='ms-5 md:ms-0' src={logoAppian} alt="" />
             </div>
             <div className='flex gap-x-7 items-center'>

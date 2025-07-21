@@ -7,70 +7,46 @@ import 'swiper/css/pagination';
 import computerAndMobileIMG from '@img/computerAndMobile.png';
 import neuronIMG from '@img/neuron.png';
 import circleFragmentIMG from '@img/circleFragment.png';
-import circle from '@img/circle.png';
+import CardSimple from '@/components/CardSimple';
+import type { ActividadItem } from '@/pages/serviciosDetalle/ServiciosDetalle';
 
-interface SolucionItem {
-  img: string;
-  nombre: string;
-  descripción: string;
-}
-
-interface categoryActiveStateIT {  
-    categoria1: SolucionItem[],
-    categoria2: SolucionItem[]
-}
-
-type categoriaKey = keyof categoryActiveStateIT;
 
 export default function Soluciones() {
 
-    const [categoryActiveState, setCategoryActive] = useState<categoriaKey>('categoria1');
+    const [tipoContenido, setTipoContenido] = useState(1);
 
-    const soluciones : categoryActiveStateIT = {
-        categoria1: [
-            {
-                img: computerAndMobileIMG,
-                nombre: texto.experienciaDigital,
-                descripción: texto.lorem
-            },
-            {
-                img: neuronIMG,
-                nombre: texto.automatización,
-                descripción: texto.lorem
-            },
-            {
-                img: circleFragmentIMG,
-                nombre: texto.solucionesTecnologicas,
-                descripción: texto.lorem
-            }
-        ],
-        categoria2: [
-            {
-                img: computerAndMobileIMG,
-                nombre: texto.projectosNuevos,
-                descripción: texto.lorem
-            },
-            {
-                img: neuronIMG,
-                nombre: texto.projectosNuevos,
-                descripción: texto.lorem
-            },
-            {
-                img: circleFragmentIMG,
-                nombre: texto.projectosNuevos,
-                descripción: texto.lorem
-            }
-        ],
-    }
+    const soluciones : ActividadItem[] = [
 
-    const changeCategory = (categoria: categoriaKey) => {
-        setCategoryActive(categoria)
+        {
+            icono: computerAndMobileIMG,
+            titulo: texto.experienciaDigital,
+            descripcion: texto.lorem
+        },
+        {
+            icono: neuronIMG,
+            titulo: texto.automatización,
+            descripcion: texto.lorem
+        },
+        {
+            icono: circleFragmentIMG,
+            titulo: texto.solucionesTecnologicas,
+            descripcion: texto.lorem
+        },
+        {
+            icono: computerAndMobileIMG,
+            titulo: texto.experienciaDigital,
+            descripcion: texto.lorem
+        },
+    ]
+
+    const changeCategory = (id: number) => {
+        setTipoContenido(id)
     }
 
     const styleCategory = "font-bold border-b-1 hover:cursor-pointer text-[14px]";
 
     return (
-        <section className='flex flex-col items-center justify-center max-w-[1400px] mt-10 mx-auto py-[80px] px-[5%]'>
+        <section className='flex flex-col items-center justify-center max-w-[1400px] mt-10 mx-auto pt-[80px] px-[5%]'>
             <div className='max-w-[350px] text-center'>
                 <p className='text-[32px] font-bold flex flex-wrap justify-center gap-x-2'>
                     <span>{texto.nuestras}</span> 
@@ -80,50 +56,37 @@ export default function Soluciones() {
             </div>
 
             <div className='my-10 flex gap-x-10'>
-                <button className={categoryActiveState === 'categoria1' ? 
+                <button className={tipoContenido === 1 ? 
                     styleCategory + ' colorRed' : 
                     styleCategory + ' border-b-[#e9e9e9] hover:border-b-[#ccc] transition-colors duration-200'
-                } onClick={() => changeCategory('categoria1')}>{texto.transformación}</button>
-                <button className={categoryActiveState === 'categoria2' ? 
+                } onClick={() => changeCategory(1)}>{texto.transformación}</button>
+                <button className={tipoContenido === 2 ? 
                     styleCategory + ' colorRed' : 
                     styleCategory + ' border-b-[#e9e9e9] hover:border-b-[#ccc] transition-colors duration-200'
-                } onClick={() => changeCategory('categoria2')}>{texto.gestión}</button>
+                } onClick={() => changeCategory(2)}>{texto.gestión}</button>
             </div>
-
-            <div className='w-full'>
-                <Swiper 
-                modules={[Pagination]} 
-                breakpoints={{
-                    0: {
-                    slidesPerView: 1,
-                    },
-                    768: {
-                    slidesPerView: 2,
-                    },
-                    1244: {
-                    slidesPerView: 3,
-                    },
-                }}
-                pagination={{ el: '.swiper-pagination', clickable: true }}
-                >
-                    {soluciones[categoryActiveState].map((solucion, index) => (
-                        <SwiperSlide key={index} className=''>
-                            <div className='flex flex-col items-center min-w-[280px] w-[330px] shadow-lg h-[390px] justify-center py-10 my-5 px-[30px] rounded-2xl group hover:-translate-y-3 transition-all duration-300 mx-auto'>
-                                <div className='relative flex items-center justify-center mb-[27px]'>
-                                    <img className='group-hover:shadow group-hover:shadow-[0_0px_20px_rgba(255,90,93,0.25)] rounded-[50px]' src={circle} alt="" />
-                                    <img className='absolute group-hover:scale-110 transition-all duration-300' src={solucion.img} alt="" />
-                                </div>
-                                <div className='flex flex-col gap-y-4 text-center'>
-                                    <h2 className='text-[22px] font-bold'>{solucion.nombre}</h2>
-                                    <p>{solucion.descripción}</p>
-                                    <a href='#' className="hover:underline hover:underline-[colorRed] colorRed font-bold w-fit mx-auto after:content-['→'] flex gap-3">{texto.saberMás}</a>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-                <div className="swiper-pagination mt-6 flex justify-center" />
-            </div>   
+                
+            {tipoContenido === 1 ? 
+                (
+                    <CardSimple
+                        arrayActividades={soluciones}
+                        sliderPerViewDesktop={3}
+                        sliderPerViewMobile={1}
+                    >
+                        <a href='#' className='colorRed text-[14px] mt-2 font-bold'>{texto.saberMás}</a>
+                    </CardSimple>
+                )
+                :
+                (
+                    <CardSimple
+                        arrayActividades={soluciones}
+                        sliderPerViewDesktop={3}
+                        sliderPerViewMobile={1}
+                    >
+                        <a href='#' className='colorRed text-[14px] mt-2 font-bold'>{texto.saberMás}</a>
+                    </CardSimple>
+                )
+            }
         </section>
     )
 }
