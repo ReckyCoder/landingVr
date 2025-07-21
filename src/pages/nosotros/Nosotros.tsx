@@ -1,23 +1,37 @@
+import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules"; // <-- solo Pagination
+import ConfianEnNosotros from '@/components/ConfianEnNosotros';
+import Contacto from '@/components/Contacto';
+import CarouselHeader from '../home/components/CarouselHeader';
+import Equipo from './Equipo';
+
+import type { CarouselSlideServiciosDetalleItem } from '../serviciosDetalle/ServiciosDetalle';
+
+import data from '@json/home.json';
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 import verticalRectangle from '@img/verticalGray.png';
 import horizontalRectangle from '@img/horizontalGray.png';
 import buttonExperience from '@img/experienceBTN.svg';
+
 import number1 from '@img/1.png';
 import number2 from '@img/2.png';
 import number3 from '@img/3.png';
 import number4 from '@img/4.png';
 import circle from '@img/circle.png';
-import data from '@json/home.json';
+
 import socioFundador from '@img/VictorSagredoFundador.png';
 import cuadradoGris from '@img/SquareBgGray.png';
-import Equipo from './Equipo';
 import linkedin from '@img/linkedin.png';
 import twitter from '@img/twitter.png';
 import kpi from '@img/KPI.png';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules"; // <-- solo Pagination
-import "swiper/css";
-import "swiper/css/pagination";
-import ConfianEnNosotros from '@/components/ConfianEnNosotros';
+
+import imagenCarouselNosotros from '@img/imagenCarouselNosotros.png';
+import iconRectangularVr from "@img/rectangularVr.png";
+import iconOvalVr from "@img/servicios/detalle-servicios/ovalVr.png";
 
 
 export interface MiembrosDelEquipo {
@@ -32,6 +46,43 @@ export interface MiembrosDelEquipo {
 
 
 export default function Nosotros() {
+    const [arrayServiciosDetalleItem, setArrayServiciosDetalleItem] = useState<
+        CarouselSlideServiciosDetalleItem[]
+      >([]);
+
+    useEffect(() => {
+        let arrayItemServicios: CarouselSlideServiciosDetalleItem[] = [
+        {
+            imagen: imagenCarouselNosotros,
+            titulo: data.partner,
+            subtitulo: data.nosPreocupamos,
+            contenido:
+            " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            overlay: {
+            imagenOverlay: iconRectangularVr,
+            imagenOverlay2: iconOvalVr,
+            altOverlay: "No disponible",
+            positionClasses:
+                "absolute top-0 -right-32  object-cover z-[999999999]",
+            },
+        },
+        {
+            imagen: imagenCarouselNosotros,
+            titulo: "appian",
+            subtitulo: "Lorem ipsum dolor amet...",
+            contenido:
+            " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            overlay: {
+            imagenOverlay: iconRectangularVr,
+            imagenOverlay2: iconOvalVr,
+            altOverlay: "No disponible",
+            positionClasses:
+                "absolute top-0 -right-32  object-cover z-[999999999]",
+            },
+        },
+        ];
+        setArrayServiciosDetalleItem(arrayItemServicios);
+    }, []);
 
     const listaEnfoque = [
         {
@@ -106,6 +157,10 @@ export default function Nosotros() {
 
     return (
         <>
+            <CarouselHeader 
+                arrayItems={arrayServiciosDetalleItem}
+                backgroundImage={imagenCarouselNosotros}
+            />
             <section>
                 <div className='grid xl:grid-cols-2 max-w-[1320px] mx-auto mt-30'>
                     <div className='relative max-h-[815px] max-w-max mx-auto'>
@@ -191,6 +246,7 @@ export default function Nosotros() {
             </section>
 
             <ConfianEnNosotros/>
+            <Contacto/>
         </>
     )
 }

@@ -22,7 +22,7 @@ export default function Equipo({item} : CardTransformacionDigitalProps) {
                 <div className="flex flex-col justify-end h-full absolute w-full bottom-15 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out ">
                     <div className="flex justify-center gap-x-8 group-hover:opacity-100">
                         {Object.entries(item.contenidoReverso).map(([key, value]) => (
-                            <a className="w-max m-0 p-0" href="">
+                            <a key={key} className="w-max m-0 p-0" href="">
                                 <img className="w-[50px] h-[50px]" src={value} alt="" />
                             </a>
                         ))}

@@ -10,7 +10,7 @@ import ServiciosYConsultoria from './components/ServiciosYConsultoria';
 import Soluciones from './components/Soluciones';
 import UltimosProyectos from './components/UltimosProyectos';
 import Testimonios from './components/Testimonios';
-import Footer from '@/components/Footer';
+import Contacto from '@/components/Contacto';
 
 export default function Home() {
 
@@ -76,6 +76,7 @@ export default function Home() {
             <Soluciones />
             <UltimosProyectos/>
             <Testimonios/>
+            <Contacto/>
         </>
     )
 }

@@ -57,14 +57,14 @@ export default function Hamburguer({isActivateHamburgerState, isVisibleHamburgue
                                     <li><NavLink to={"/servicios"} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2' : ""}>{texto.servicios}</NavLink></li>
                                 </nav>
                                 <li className={'flex flex-row-reverse items-center gap-2'}>{texto.trabaja}<img className='w-5 h-auto' src={iconPerson}/></li>
-                                <li className={'flex flex-row-reverse items-center'}>{texto.hablemos}<img className='w-10 h-auto' src={iconComment}/></li>
+                                <li><NavLink to={'/hablemos'} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2 flex items-center' : 'flex items-center'}>{texto.hablemos}<img className='w-10 h-auto' src={iconComment}/></NavLink></li>
                             </div>
                         )
                         :
                         (
                             <>
                                 <li className={'flex items-center gap-2'}>{texto.trabaja}<img className='w-5 h-auto' src={iconPerson}/></li>
-                                <li className={'flex items-center'}>{texto.hablemos}<img className='w-10 h-auto' src={iconComment}/></li>
+                                <li><NavLink to={'/hablemos'} className={({isActive}) => isActive ? 'border-b-(--color-primary-red) border-b-2 flex items-center' : 'flex items-center'}>{texto.hablemos}<img className='w-10 h-auto' src={iconComment}/></NavLink></li>
                             </>
                         )
                     }

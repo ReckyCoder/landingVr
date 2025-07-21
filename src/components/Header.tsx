@@ -4,6 +4,9 @@ import { useEffect, useRef, useState, type RefObject } from 'react';
 import texto from '@json/home.json';
 import { NavLink, useLocation } from '@node_modules/react-router/dist/development';
 
+type HeaderProps = {
+  tipoHeader?: number;
+};
 export default function Header() {
 
     const localization = useLocation();
@@ -14,9 +17,9 @@ export default function Header() {
     const [isActivateHamburgerState, setHamburguer] = useState(false);
     const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(false)
 
-    useEffect(() => {
-        const handleResize = () => setisVisibleHamburguer(window.innerWidth < 768);
-        const handleScroll = () => setIsSticky(window.scrollY > 120);
+  useEffect(() => {
+    const handleResize = () => setisVisibleHamburguer(window.innerWidth < 768);
+    const handleScroll = () => setIsSticky(window.scrollY > 120);
 
         handleResize();
 
@@ -24,20 +27,23 @@ export default function Header() {
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('resize', handleResize);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [])
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-    const changeHamburguer = (isActive: boolean, headerRef: RefObject<HTMLElement> | null, setIsHeader: React.Dispatch<React.SetStateAction<boolean>>) => {
-        setHamburguer(isActive);
-        console.log(headerRef?.current.tagName === "HEADER");
+  const changeHamburguer = (
+    isActive: boolean,
+    headerRef: RefObject<HTMLElement> | null,
+    setIsHeader: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
+    setHamburguer(isActive);
 
-        if(headerRef?.current.tagName === "HEADER"){
-            setIsHeader(true);
-        }
+    if (headerRef?.current.tagName === "HEADER") {
+      setIsHeader(true);
     }
+  };
 
     const styleHeader = " w-full grid grid-cols-3 items-center justify-between colorBg h-[70px] transition-all duration-500 z-3 border border-b-[#474747]"
     const isHome = (

@@ -3,6 +3,9 @@
 @layer utilities {
     .colorRed { color: #ff5a5d;}
     .colorGray { color: #5E626C; }
+    .colorGray2 { color: #939393;}
+    .colorGray3 { color: #767676;}
+    .colorGray4 {color: #E5E5E5;}
     .colorGraySecondary { color: #939393; }
     .colorBlack {color: #25252D}
     .colordBgRed2 { background-color: #CD0438; }
@@ -20,6 +23,7 @@
 }
 
 @theme {
+   
     --color-primary-red: #ff5a5d;
     --color-secondary-gray: #5E626C;
 }
@@ -35,6 +39,21 @@
 .swiper-pagination{
     margin-top: 10px;
     position: initial !important;
+    margin-bottom: 1rem;
+}
+
+.carousel-servicios .swiper{
+  position: initial !important;
+}
+.carousel-servicios .swiper-pagination{
+    position: absolute !important;
+    bottom: 0px;
+}
+
+
+.carousel-detalle-servicios .swiper-pagination{
+    position: absolute !important;
+    bottom: 0px;
 }
 
 .swiper-pagination-bullet{
@@ -43,4 +62,79 @@
 
 .swiper-pagination-bullet-active{
     background-color: #CD0438;
+}
+
+
+@media (max-width: 725px) {
+  .border-small-detalle-servicios{
+    display: block;
+  }
+
+  .border-big-detalle-servicios{
+    display: none;
+  }
+
+
+  .image-rectangular-vr{
+    object-fit: initial;
+    width: 100px;
+  }
+
+  .container-texto-servicio-detalle{
+    margin: 1rem;
+  }
+
+  .container-image-servicio-detalle{
+    margin: 0 auto;
+    margin-right: 4rem;
+  }
+
+
+}
+
+@media (max-width: 1100px) {
+    .imagen-carousel-servicios{
+        width: 600px !important;
+        position: relative;
+        margin: 0 auto;
+        right: 0;
+    }
+
+      .content-texto-carousel{
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .carousel-servicios .carousel {
+    max-height: 1000px;
+    min-height: 500px;
+  }
+
+  .servicios-container-logo-carousel{
+    padding-top: 5rem;
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .container-iconos-carousel-servicios-detalle{
+    display: none;
+  }
+}
+
+
+.carousel-servicios .swiper-slide {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.carousel-servicios .swiper-slide-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.container-texto-segundo-servicios-detalle{
+  opacity: 0;
 }
