@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules"; // <-- solo Pagination
+import { Autoplay, Navigation, Pagination } from "swiper/modules"; // <-- solo Pagination
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -56,12 +56,12 @@ export default function TecnologiasServicios() {
         </h2>
 
         <Swiper
-          modules={[Pagination]} // <-- solo Pagination
+          modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={24}
           breakpoints={{
             320: { slidesPerView: 2 },
             640: { slidesPerView: 3 },
-            1024: { slidesPerView: 5 },
+            1024: { slidesPerView: 5, slidesPerGroup: 5 },
           }}
           pagination={{ clickable: true }}
         >
@@ -71,7 +71,7 @@ export default function TecnologiasServicios() {
                 className="relative group h-40 rounded-xl border border-gray-300 bg-white 
                 shadow-sm transition-shadow transition-colors duration-300 
                 hover:shadow-md cursor-pointer overflow-hidden
-                hover:colorBgPink-45 max-h-[100px]"
+                hover:colorBgPink-45 max-h-[120px]"
               >
                 <div className="flex items-center justify-center h-full ">
                   <img
