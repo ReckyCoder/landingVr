@@ -20,7 +20,7 @@ export default function Contacto() {
   return (
     <section
       id="contactosection"
-      className="py-16 bg-white h-[736px] content-center"
+      className="py-16 bg-white h-auto md:h-[736px]  content-center"
     >
       <div className="max-w-6xl mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-12">
         {/* Columna de información de contacto */}

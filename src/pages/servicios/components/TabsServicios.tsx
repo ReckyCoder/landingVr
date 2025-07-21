@@ -27,7 +27,11 @@ export interface TransformacionDigitalItem {
   contenidoReverso: ContenidoReverso;
 }
 
-export default function TabsServicios() {
+type TabsServiciosProps = {
+  className?: string;
+};
+
+export default function TabsServicios({ className }: TabsServiciosProps) {
   const [tipoContenido, setTipoContenido] = useState(1);
 
   const [arrayTransformacionDigital, setArrayTransformacionDigital] = useState<
@@ -116,7 +120,7 @@ export default function TabsServicios() {
   }, []);
 
   return (
-    <section className="tab-servicios px-4 mb-20">
+    <section className={`tab-servicios px-4 mb-20 ${className}`}>
       {/* Tabs */}
       <div className="w-full max-w-4xl mx-auto mt-10 border-b border-gray-300">
         <ul className="flex justify-center space-x-4">

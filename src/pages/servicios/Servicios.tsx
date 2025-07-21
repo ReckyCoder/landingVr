@@ -28,9 +28,20 @@ export interface CarouselSlideServiciosItem {
   overlay?: OverlayConfig;
 }
 
+export interface DetalleServiciosItem {
+  titulo: string;
+  classNameTitulo?: string;
+  subtitulo: string;
+  classNameSubtitulo?: string;
+}
+
 export default function Servicios() {
   const [arrayServiciosItem, setArrayServiciosItem] = useState<
     CarouselSlideServiciosItem[]
+  >([]);
+
+  const [arrayDetalleServiciosItem, setArrayDertalleServiciosItem] = useState<
+    DetalleServiciosItem[]
   >([]);
 
   useEffect(() => {
@@ -63,6 +74,39 @@ export default function Servicios() {
       },
     ];
     setArrayServiciosItem(arrayItemServicios);
+
+    const dataDetalleServiciosItem: DetalleServiciosItem[] = [
+      {
+        titulo: "132",
+        classNameTitulo:
+          "font-semibold text-[48px] leading-[48px] colorRed !font-fontbold",
+        subtitulo: "Proyectos completados",
+        classNameSubtitulo: "text-sm text-gray-500",
+      },
+      {
+        titulo: "97",
+        classNameTitulo:
+          "font-semibold text-[48px] leading-[48px] colorRed !font-fontbold",
+        subtitulo: "Clientes felices",
+        classNameSubtitulo: "text-sm text-gray-500",
+      },
+      {
+        titulo: "32",
+        classNameTitulo:
+          "font-semibold text-[48px] leading-[48px] colorRed !font-fontbold",
+        subtitulo: "Awards Win",
+        classNameSubtitulo: "text-sm text-gray-500",
+      },
+      {
+        titulo: "50",
+        classNameTitulo:
+          "font-semibold text-[48px] leading-[48px] colorRed !font-fontbold",
+        subtitulo: "Awesome Team",
+        classNameSubtitulo: "text-sm text-gray-500",
+      },
+    ];
+
+    setArrayDertalleServiciosItem(dataDetalleServiciosItem);
   }, []);
 
   return (
@@ -111,6 +155,7 @@ export default function Servicios() {
                     className={`hidden md:block ${item.overlay?.positionClasses}  w-[400px] xl:w-[auto] lg:w-[700px] md:w-[600px] max-w-full h-auto imagen-carousel-servicios`}
                     src={item.overlay?.imagenOverlay}
                     alt={item.overlay?.altOverlay}
+                    style={{ marginTop: "-1rem" }}
                   />
                 </div>
               </SwiperSlide>
@@ -119,10 +164,22 @@ export default function Servicios() {
         </div>
       </section>
 
-      <TabsServicios />
+      <TabsServicios className="mt-30" />
 
       <TecnologiasServicios />
-      <DetalleServicios />
+      <DetalleServicios
+        header={
+          <h1
+            className={`max-w-[700px] mx-auto font-normal text-[32px] leading-[48px] tracking-normal text-center colorBlack2`}
+          >
+            VR Group es una solución integral para servicios profesionales de
+            marca, diseño y desarrollo.
+          </h1>
+        }
+        items={arrayDetalleServiciosItem}
+        classNameContainer="h-auto md:h-[450px] p-10"
+        itemsPerRowMobile={2}
+      />
       <ConfianEnNosotros />
       <Contacto />
     </>
