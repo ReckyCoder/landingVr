@@ -16,16 +16,21 @@ interface ContenidoReverso {
   subtitulo3: string;
 }
 
-export interface TransformacionDigitalItem {
+export type TransformacionDigitalItem = {
   imagenPortada: string;
   tituloPortada: string;
   contenidoPortada: string;
 
-  headerReverso: string;
-  imagenReverso: string;
+  headerReverso?: string;
+  imagenReverso?: string;
   tituloReverso: string;
-  contenidoReverso: ContenidoReverso;
-}
+  contenidoReverso?: ContenidoReverso;
+
+  isCircle: boolean;
+
+  tipoCard: "card-red" | "card-gray";
+  verDetalle: boolean;
+};
 
 type TabsServiciosProps = {
   className?: string;
@@ -54,6 +59,9 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
       {
         imagenPortada: iconComputer,
@@ -69,6 +77,9 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
       {
         imagenPortada: iconAiRobot,
@@ -84,6 +95,9 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
       {
         imagenPortada: iconAirPlane,
@@ -99,6 +113,9 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
       {
         imagenPortada: iconAirPlane,
@@ -114,6 +131,9 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
     ];
     setArrayTransformacionDigital(arrayTransformacionDigital);
