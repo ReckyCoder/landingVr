@@ -16,18 +16,27 @@ interface ContenidoReverso {
   subtitulo3: string;
 }
 
-export interface TransformacionDigitalItem {
+export type TransformacionDigitalItem = {
   imagenPortada: string;
   tituloPortada: string;
   contenidoPortada: string;
 
-  headerReverso: string;
-  imagenReverso: string;
+  headerReverso?: string;
+  imagenReverso?: string;
   tituloReverso: string;
-  contenidoReverso: ContenidoReverso;
-}
+  contenidoReverso?: ContenidoReverso;
 
-export default function TabsServicios() {
+  isCircle: boolean;
+
+  tipoCard: "card-red" | "card-gray";
+  verDetalle: boolean;
+};
+
+type TabsServiciosProps = {
+  className?: string;
+};
+
+export default function TabsServicios({ className }: TabsServiciosProps) {
   const [tipoContenido, setTipoContenido] = useState(1);
 
   const [arrayTransformacionDigital, setArrayTransformacionDigital] = useState<
@@ -50,6 +59,9 @@ export default function TabsServicios() {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
       {
         imagenPortada: iconComputer,
@@ -65,6 +77,9 @@ export default function TabsServicios() {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
       {
         imagenPortada: iconAiRobot,
@@ -80,6 +95,9 @@ export default function TabsServicios() {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
       {
         imagenPortada: iconAirPlane,
@@ -95,6 +113,9 @@ export default function TabsServicios() {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
       {
         imagenPortada: iconAirPlane,
@@ -110,13 +131,16 @@ export default function TabsServicios() {
           subtitulo2: "CONSULTORÍAS UX",
           subtitulo3: "DISEÑO UX",
         },
+        isCircle: true,
+        tipoCard: "card-red",
+        verDetalle: false,
       },
     ];
     setArrayTransformacionDigital(arrayTransformacionDigital);
   }, []);
 
   return (
-    <section className="tab-servicios px-4 mb-20">
+    <section className={`tab-servicios px-4 mb-20 ${className}`}>
       {/* Tabs */}
       <div className="w-full max-w-4xl mx-auto mt-10 border-b border-gray-300">
         <ul className="flex justify-center space-x-4">

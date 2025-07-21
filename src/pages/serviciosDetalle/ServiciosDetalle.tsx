@@ -7,9 +7,19 @@ import iconRectangularVr from "@img/rectangularVr.png";
 import iconOvalVr from "@img/servicios/detalle-servicios/ovalVr.png";
 import iconDesktop from "@img/servicios/detalle-servicios/iconDesktop.png";
 
+import imageProcesosVr from "@img/servicios/detalle-servicios/imagenProcesosVr.png";
+
+import iconFigma from "@img/servicios/detalle-servicios/iconFigma.png";
+import iconMiro from "@img/servicios/detalle-servicios/iconMiro.png";
+import iconGoogleAnalitics from "@img/servicios/detalle-servicios/iconGoogleAnalitics.png";
+import iconOw from "@img/servicios/detalle-servicios/iconOw.png";
+
 import imageCarouselDetalleServicios from "@img/servicios/detalle-servicios/imagenCarouselDetalleServicios.png";
 import CarouselHeader from "../home/components/CarouselHeader";
 import CardSimple from "@/components/CardSimple";
+import Herramientas from "../servicios/components/ServiciosDetalle/Herramientas";
+import DetalleServicios from "../servicios/components/DetalleServicios";
+import type { DetalleServiciosItem } from "../servicios/Servicios";
 
 export interface OverlayConfig {
   imagenOverlay: string;
@@ -31,12 +41,24 @@ export interface ActividadItem {
   descripcion: string;
 }
 
+export interface HerramientaDigitalItem {
+  icono: string;
+}
+
 export default function ServiciosDetalle() {
   const [arrayServiciosDetalleItem, setArrayServiciosDetalleItem] = useState<
     CarouselSlideServiciosDetalleItem[]
   >([]);
 
   const [arrayActividades, setArrayActividades] = useState<ActividadItem[]>([]);
+
+  const [arrayHerramientas, setArrayHerramientas] = useState<
+    HerramientaDigitalItem[]
+  >([]);
+
+  const [arrayDetalleServiciosItem, setArrayDertalleServiciosItem] = useState<
+    DetalleServiciosItem[]
+  >([]);
 
   useEffect(() => {
     let arrayItemServicios: CarouselSlideServiciosDetalleItem[] = [
@@ -94,6 +116,64 @@ export default function ServiciosDetalle() {
     ];
 
     setArrayActividades(dataActividades);
+
+    const dataHerramientas: HerramientaDigitalItem[] = [
+      {
+        icono: iconFigma,
+      },
+      {
+        icono: iconMiro,
+      },
+      {
+        icono: iconGoogleAnalitics,
+      },
+      {
+        icono: iconOw,
+      },
+    ];
+
+    setArrayHerramientas(dataHerramientas);
+
+    const dataDetalleServiciosItem: DetalleServiciosItem[] = [
+      {
+        titulo: "Mejora de la satisfacción del usuario",
+        classNameTitulo:
+          "font-bold text-[14px] leading-[25px] tracking-normal colorGray",
+        subtitulo:
+          "Ofrecemos experiencias intuitivas y agradables que fidelizan a tus clientes.",
+        classNameSubtitulo:
+          "font-normal text-[14px] leading-[25px] tracking-normal colorGray",
+      },
+      {
+        titulo: "Aumento de la conversión y retención",
+        classNameTitulo:
+          "font-bold text-[14px] leading-[25px] tracking-normal colorGray",
+        subtitulo:
+          "Optimizamos el recorrido del usuario para incrementar ventas y fomentar la lealtad del cliente.",
+        classNameSubtitulo:
+          "font-normal text-[14px] leading-[25px] tracking-normal colorGray",
+      },
+      {
+        titulo: "Reducción de errores y costos",
+        classNameTitulo:
+          "font-bold text-[14px] leading-[25px] tracking-normal colorGray",
+        subtitulo:
+          "Minimizamos problemas de usabilidad y reducimos la necesidad de soporte técnico.",
+        classNameSubtitulo:
+          "font-normal text-[14px] leading-[25px] tracking-normal colorGray",
+      },
+      {
+        titulo: "Ventaja competitiva",
+        classNameTitulo:
+          "font-bold text-[14px] leading-[25px] tracking-normal colorGray",
+        subtitulo:
+          "Diferencia tu marca con una experiencia de usuario superior que destaca en el mercado.",
+        classNameSubtitulo:
+          "font-normal text-[14px] leading-[25px] tracking-normal colorGray",
+      },
+    ];
+
+    setArrayDertalleServiciosItem(dataDetalleServiciosItem);
   }, []);
 
   return (
@@ -103,7 +183,7 @@ export default function ServiciosDetalle() {
         backgroundImage={imageCarouselDetalleServicios}
       />
 
-      <section className="servicios-detalle-activities-planning mt-5">
+      <section className="servicios-detalle-activities-planning mt-5 max-w-[1200px] mx-auto">
         <article className="flex flex-col gap-10 p-20 max-w-[800px]">
           <h3 className="font-bold text-[22px] leading-[100%] tracking-normal">
             En que nos enfocamos
@@ -136,7 +216,35 @@ export default function ServiciosDetalle() {
             />
           </div>
         </article>
+
+        <article className="flex flex-col items-center justify-center mx-auto text-center gap-10 mt-20">
+          <h5 className="text-[32px] leading-[100%] font-bold text-center">
+            Nuestro Proceso
+          </h5>
+          <img
+            src={imageProcesosVr}
+            alt="No disponible"
+            className="max-w-full h-auto"
+          />
+        </article>
       </section>
+
+      <Herramientas items={arrayHerramientas} />
+
+      <DetalleServicios
+        header={
+          <h1
+            className={`max-w-[700px] mx-auto font-bold text-[32px] leading-[32px] tracking-normal text-center`}
+          >
+            ¿Cuales son los{" "}
+            <span className="colorRed font-bold">Beneficios</span> para tu
+            negocio?
+          </h1>
+        }
+        items={arrayDetalleServiciosItem}
+        classNameContainer="h-auto md:h-[450px] p-10"
+        itemsPerRowMobile={1}
+      />
 
       <ConfianEnNosotros />
       <Contacto />
