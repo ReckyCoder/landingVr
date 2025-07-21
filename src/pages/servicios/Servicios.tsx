@@ -84,12 +84,12 @@ export default function Servicios() {
             modules={[Navigation, Pagination, Autoplay]}
             loop={true}
             pagination={{ clickable: true }}
-            autoplay={{ delay: 4000 }}
+            autoplay={{ delay: 500000 }}
             className="w-full max-w-7xl px-6 !overflow-visible"
           >
             {arrayServiciosItem.map((item, index) => (
               <SwiperSlide>
-                <div className="flex flex-col justify-between servicios-container-swiper-slide gap-5">
+                <div className="flex flex-col justify-between servicios-container-swiper-slide gap-5 px-10">
                   {/* Texto */}
                   <div className="mx-auto servicios-container-logo-carousel">
                     <img

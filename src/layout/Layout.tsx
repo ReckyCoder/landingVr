@@ -8,7 +8,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main className="overflow-x-hidden">
+      <main className="">
         <Outlet />
       </main>
       <Footer />

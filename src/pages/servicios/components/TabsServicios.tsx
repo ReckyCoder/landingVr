@@ -126,7 +126,7 @@ export default function TabsServicios() {
               className={`px-5 py-3 text-sm font-semibold border-b-2 transition-all duration-300 ${
                 tipoContenido === 1
                   ? "border-red-600 text-red-600"
-                  : "border-transparent text-gray-500 hover:text-red-500"
+                  : "border-transparent text-gray-500 hover:text-red-500 cursor-pointer"
               }`}
             >
               Transformación Digital y Tecnología
@@ -138,7 +138,7 @@ export default function TabsServicios() {
               className={`px-5 py-3 text-sm font-semibold border-b-2 transition-all duration-300 ${
                 tipoContenido === 2
                   ? "border-red-600 text-red-600"
-                  : "border-transparent text-gray-500 hover:text-red-500"
+                  : "border-transparent text-gray-500 hover:text-red-500 cursor-pointer"
               }`}
             >
               Gestión, Operaciones, Riesgo y Cumplimiento
