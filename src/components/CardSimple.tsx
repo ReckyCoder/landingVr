@@ -26,7 +26,7 @@ export default function CardSimple({
   return (
     <section className={`px-4 md:px-20 mx-auto w-full mx-auto ${className}`}>
       <Swiper
-        loop={false}
+        loop={true}
         modules={[Navigation, Pagination, Autoplay]}
         pagination={{ clickable: true }}
         autoplay={{ delay: autoPlay }}
@@ -34,9 +34,11 @@ export default function CardSimple({
         breakpoints={{
           768: {
             slidesPerView: sliderPerViewDesktop,
+            slidesPerGroup: sliderPerViewDesktop,
           },
           0: {
             slidesPerView: sliderPerViewMobile,
+            slidesPerGroup: sliderPerViewMobile,
           },
         }}
       >

@@ -49,14 +49,7 @@ export default function Home() {
     <>
       <section className="relative flex flex-col">
         <div className="absolute flex flex-col items-center w-full z-2">
-          <div ref={headerRef} className="absolute right-0 pr-10 top-15">
-            <Hamburguer
-              isActivateHamburgerState={isActivateHamburgerState}
-              isVisibleHamburguerState={isVisibleHamburguerState}
-              changeHamburguer={changeHamburguer}
-              headerRef={headerRef}
-            />
-          </div>
+          <div ref={headerRef} className="absolute right-0 pr-10 top-15"></div>
           <img
             className="w-[81px] md:w-[155px] transition-all duration-500"
             src={gradient}

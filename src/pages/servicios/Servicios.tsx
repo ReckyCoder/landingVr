@@ -110,7 +110,7 @@ export default function Servicios() {
   return (
     <>
       <section className="carousel-servicios mb-25">
-        <div className="carousel bg-[#171E26] text-white max-h-[574px] min-h-[574px] flex items-center justify-center relative overflow-visible">
+        <div className="carousel bg-[#171E26] text-white max-h-[1000px] min-h-[614px] h-auto flex items-center justify-center relative overflow-visible">
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 flex flex-col items-center space-y-2">
             <a
               href="https://linkedin.com"
@@ -129,7 +129,7 @@ export default function Servicios() {
             autoplay={{ delay: 5000 }}
             className="w-full max-w-7xl px-6 !overflow-visible"
           >
-            {arrayServiciosItem.map((item, index) => (
+            {arrayServiciosItem.map((item) => (
               <SwiperSlide>
                 <div className="flex flex-col justify-between servicios-container-swiper-slide gap-5 px-10">
                   {/* Texto */}

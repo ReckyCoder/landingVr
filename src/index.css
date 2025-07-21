@@ -42,6 +42,8 @@
     background-color: #CD0438 !important;
 }
 
+
+
 @media (max-width: 1536px){
     .swiper-projects .swiper-pagination {
         position: absolute !important;
@@ -121,6 +123,10 @@
 
 }
 
+@media (min-width: 1100px){
+  
+}
+
 @media (max-width: 1100px) {
     .imagen-carousel-servicios{
         width: 600px !important;
@@ -134,10 +140,6 @@
     text-align: center;
   }
 
-  .carousel-servicios .carousel {
-    max-height: 1000px;
-    min-height: 500px;
-  }
 
   .servicios-container-logo-carousel{
     padding-top: 5rem;

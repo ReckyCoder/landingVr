@@ -1,128 +1,209 @@
-import Hamburguer from "@/utils/Hamburguer";
-import logoVr from "@img/logo-vr-group.png";
-import { useEffect, useRef, useState, type RefObject } from "react";
-import texto from "@json/home.json";
-import {
-  NavLink,
-  useLocation,
-} from "@node_modules/react-router/dist/development";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import logoVr from "@img/home/logoVr2.png";
+import iconPerson from "@img/iconPerson.svg";
+import iconComent from "@img/iconComment.png";
+import iconHamburger from "@img/navbar/iconHamburger.png";
+import iconClose from "@img/navbar/iconClose.png";
 
 type HeaderProps = {
-  tipoHeader?: number;
+  mode?: "fixed" | "scrollHide";
 };
-export default function Header() {
-  const localization = useLocation();
 
-  const [isSticky, setIsSticky] = useState(false);
-  const headerRef = useRef<HTMLElement>(null);
+export default function Header({}: HeaderProps) {
+  const { pathname } = useLocation();
+  const mode = pathname === "/home" ? "scrollHide" : "fixed";
 
-  const [isActivateHamburgerState, setHamburguer] = useState(false);
-  const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(false);
+  const isHome = pathname === "/home" ? true : false;
+
+  const [showNavbar, setShowNavbar] = useState(mode === "scrollHide");
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para el menú hamburguesa
 
   useEffect(() => {
-    const handleResize = () => setisVisibleHamburguer(window.innerWidth < 768);
-    const handleScroll = () => setIsSticky(window.scrollY > 120);
+    window.scrollTo(0, 0);
+    setMenuOpen(false);
+  }, [pathname]);
 
-    handleResize();
+  useEffect(() => {
+    if (mode !== "scrollHide") return;
 
-    // Llamada inicial
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
+    const handleScroll = () => {
+      setShowNavbar(window.scrollY > 10);
     };
-  }, []);
 
-  const changeHamburguer = (
-    isActive: boolean,
-    headerRef: RefObject<HTMLElement> | null,
-    setIsHeader: React.Dispatch<React.SetStateAction<boolean>>
-  ) => {
-    setHamburguer(isActive);
-
-    if (headerRef?.current.tagName === "HEADER") {
-      setIsHeader(true);
-    }
-  };
-
-  const styleHeader =
-    " w-full grid grid-cols-3 items-center justify-between colorBg h-[70px] transition-all duration-500 z-3 border border-b-[#474747]";
-  const isHome =
-    localization.pathname === "/home" && isSticky
-      ? "fixed top-0"
-      : localization.pathname === "/home" && !isSticky
-      ? "fixed -top-80"
-      : localization.pathname !== "/home" && !isSticky
-      ? "relative"
-      : localization.pathname !== "/home" && isSticky
-      ? "fixed top-0"
-      : "";
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mode]);
 
   return (
-    <header ref={headerRef} className={isHome + styleHeader}>
-      <div className="flex justify-center">
-        <img className="w-[130px]" src={logoVr} alt="logo vr" />
-      </div>
-      <nav className="invisible md:visible flex list-none gap-4 text-white justify-center h-full justify-center">
-        <li className="h-full">
-          <NavLink
-            to={"/home"}
-            className={({ isActive }) =>
-              `${
-                isActive
-                  ? "text-(--color-primary-red) border-b-(--color-primary-red) border-b-2"
-                  : ""
-              }  items-center flex h-full hover:text-(--color-primary-red)`
-            }
-          >
-            {texto.inicio}
-          </NavLink>
-        </li>
-        <li className="h-full">
-          <NavLink
-            to={"/nosotros"}
-            className={({ isActive }) =>
-              `${
-                isActive
-                  ? "text-(--color-primary-red) border-b-(--color-primary-red) border-b-2"
-                  : ""
-              }  items-center flex h-full hover:text-(--color-primary-red)`
-            }
-          >
-            {texto.nosotros}
-          </NavLink>
-        </li>
-        <li className="h-full">
-          <NavLink
-            to={"/servicios"}
-            className={({ isActive }) =>
-              `${
-                isActive
-                  ? "text-(--color-primary-red) border-b-(--color-primary-red) border-b-2"
-                  : ""
-              }  items-center flex h-full hover:text-(--color-primary-red)`
-            }
-          >
-            {texto.servicios}
-          </NavLink>
-        </li>
-      </nav>
-      <div
-        className={
-          isVisibleHamburguerState
-            ? "flex justify-end"
-            : "flex justify-center h-full"
+    <div
+      style={!isHome ? { position: "fixed" } : undefined}
+      className={`fixed  p-10 lg:p-0 top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+        !isHome ? "relative" : ""
+      }
+        ${
+          mode === "fixed"
+            ? "translate-y-0"
+            : showNavbar
+            ? "translate-y-0"
+            : "-translate-y-full"
         }
-      >
-        <Hamburguer
-          isActivateHamburgerState={isActivateHamburgerState}
-          isVisibleHamburguerState={isVisibleHamburguerState}
-          changeHamburguer={changeHamburguer}
-          headerRef={headerRef}
-        />
+        colorBg shadow-md h-[70px]`}
+    >
+      <div className="h-[100%] max-w-7xl mx-auto">
+        <div className="h-[100%] flex items-center justify-between h-16 px-4 md:px-0">
+          <div className="flex-shrink-0">
+            <img src={logoVr} alt="VR Group" />
+          </div>
+
+          {/* Menú desktop */}
+          <nav className="hidden md:flex gap-8 h-full items-center">
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                isActive
+                  ? "h-full flex items-center text-[#F16262] font-semibold border-b-2 border-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+                  : "h-full flex items-center text-white font-semibold hover:text-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+              }
+            >
+              Inicio
+            </NavLink>
+            <NavLink
+              to="/nosotros"
+              className={({ isActive }) =>
+                isActive
+                  ? "h-full flex items-center text-[#F16262] font-semibold border-b-2 border-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+                  : "h-full flex items-center text-white font-semibold hover:text-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+              }
+            >
+              Nosotros
+            </NavLink>
+            <NavLink
+              to="/servicios"
+              className={({ isActive }) =>
+                isActive
+                  ? "h-full flex items-center text-[#F16262] font-semibold border-b-2 border-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+                  : "h-full flex items-center text-white font-semibold hover:text-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+              }
+            >
+              Servicios
+            </NavLink>
+          </nav>
+
+          <div className="hidden md:flex h-full items-center gap-2 text-sm">
+            <NavLink
+              to="/trabaja-con-nosotros"
+              className={({ isActive }) =>
+                isActive
+                  ? "h-full flex items-center gap-2 text-[#F16262] border-b-2 border-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+                  : "flex items-center gap-2 text-white hover:text-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+              }
+            >
+              <i className="fa-regular fa-user text-lg"></i>
+              Trabaja con nosotros
+            </NavLink>
+            <img className="w-[25px]" src={iconPerson} />
+            <NavLink
+              to="/hablemos"
+              className={({ isActive }) =>
+                isActive
+                  ? "h-full flex items-center gap-2 text-[#F16262] border-b-2 border-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+                  : "flex items-center gap-2 text-white hover:text-[#F16262] font-bold text-[14px] leading-[100%] tracking-[0%]"
+              }
+            >
+              <i className="fa-regular fa-comment-dots text-lg"></i>
+              Hablemos
+            </NavLink>
+            <img className="w-[25px]" src={iconComent} />
+          </div>
+
+          {/* Icono hamburguesa visible en móvil */}
+          <div className="flex md:hidden items-center">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+              className="p-2 focus:outline-none  cursor-pointer"
+            >
+              <img src={iconHamburger} alt="Menu" />
+            </button>
+          </div>
+        </div>
       </div>
-    </header>
+
+      {/* Menú móvil desplegable con transición */}
+      <div
+        className={`fixed top-0 right-0 w-60 colorBg shadow-lg z-50 rounded-bl-md  rounded-br-md
+    flex flex-col p-6 gap-6 text-white
+    h-[auto] overflow-hidden
+    transform transition-transform duration-300 ease-in-out origin-top
+    ${menuOpen ? "translate-y-0" : "-translate-y-full pointer-events-none"}
+  `}
+      >
+        <button
+          className="cursor-pointer self-end"
+          onClick={() => setMenuOpen(false)}
+        >
+          <img src={iconClose} />
+        </button>
+
+        <NavLink
+          to="/home"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#F16262] font-semibold border-b-2 border-[#F16262] pb-1"
+              : "hover:text-[#F16262] pb-1"
+          }
+        >
+          Inicio
+        </NavLink>
+        <NavLink
+          to="/nosotros"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#F16262] font-semibold border-b-2 border-[#F16262] pb-1"
+              : "hover:text-[#F16262] pb-1"
+          }
+        >
+          Nosotros
+        </NavLink>
+        <NavLink
+          to="/servicios"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#F16262] font-semibold border-b-2 border-[#F16262] pb-1"
+              : "hover:text-[#F16262] pb-1"
+          }
+        >
+          Servicios
+        </NavLink>
+
+        <NavLink
+          to="/trabaja-con-nosotros"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#F16262] font-semibold border-b-2 border-[#F16262] pb-1"
+              : "hover:text-[#F16262] pb-1"
+          }
+        >
+          Trabaja con nosotros
+        </NavLink>
+
+        <NavLink
+          to="/hablemos"
+          onClick={() => setMenuOpen(false)}
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#F16262] font-semibold border-b-2 border-[#F16262] pb-1"
+              : "hover:text-[#F16262] pb-1"
+          }
+        >
+          Hablemos
+        </NavLink>
+      </div>
+    </div>
   );
 }

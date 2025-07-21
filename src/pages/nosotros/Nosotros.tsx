@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules"; // <-- solo Pagination
+import { Autoplay, Navigation, Pagination } from "swiper/modules"; // <-- solo Pagination
 import ConfianEnNosotros from "@/components/ConfianEnNosotros";
 import Contacto from "@/components/Contacto";
 import CarouselHeader from "../home/components/CarouselHeader";
@@ -267,15 +267,16 @@ export default function Nosotros() {
         </div>
         <div className="mt-8 transition-opacity duration-500 ease-in-out opacity-100 animate-fade-in">
           <Swiper
-            modules={[Pagination]} // <-- solo Pagination
+            loop={true}
+            modules={[Navigation, Pagination, Autoplay]}
+            pagination={{ clickable: true }}
             spaceBetween={24}
             breakpoints={{
-              0: { slidesPerView: 1 },
-              480: { slidesPerView: 2 },
-              640: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 },
+              0: { slidesPerView: 1, slidesPerGroup: 1 },
+              480: { slidesPerView: 2, slidesPerGroup: 2 },
+              640: { slidesPerView: 3, slidesPerGroup: 3 },
+              1024: { slidesPerView: 4, slidesPerGroup: 4 },
             }}
-            pagination={{ clickable: true }}
             className="w-full"
           >
             <div className="animate-fade-in max-w-6xl mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
