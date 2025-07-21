@@ -28,11 +28,32 @@
     --color-secondary-gray: #5E626C;
 }
 
+.swiper-projects .swiper-pagination {
+    position: absolute !important;
+    top: 75% !important;
+}
+
+.swiper-projects .swiper-pagination-bullet{
+    background-color: #FF9B9D !important;
+}
+
+.swiper-projects .swiper-pagination-bullet-active {
+    background-color: #CD0438 !important;
+}
+
+@media (max-width: 1536px){
+    .swiper-projects .swiper-pagination {
+        position: absolute !important;
+        top: 65% !important;
+    }
+   
+}
+
 .swiper-transition {
     .swiper-wrapper {
-    -webkit-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear;
+        -webkit-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+        transition-timing-function: linear;
     }
 }
 

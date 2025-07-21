@@ -1,6 +1,6 @@
 import texto from "@json/home.json";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import bancoEstadoIMG from "@img/bancoEstadoCobranzas.png";
 import puertoDeIdeasIMG from "@img/PuertoDeIdeas.png";
 import biceVidaIMG from "@img/BiceVida.png";
@@ -9,6 +9,25 @@ import unicardIMG from "@img/Unicard.png";
 import "swiper/css";
 
 export default function ConfianEnNosotros() {
+
+  const dataEmpresas = [
+    {
+      img: bancoEstadoIMG
+    },
+    {
+      img: puertoDeIdeasIMG
+    },
+    {
+      img: biceVidaIMG
+    },
+    {
+      img: cajaLosAndesIMG
+    },
+    {
+      img: unicardIMG
+    },
+  ]
+
   return (
     <>
       <div className="colorBg !h-[368px] w-full colorBg flex flex-col justify-center gap-10">
@@ -16,46 +35,24 @@ export default function ConfianEnNosotros() {
           {texto.confian}
         </h2>
 
-        <div className="w-full mt-10 flex items-center colorBg">
+        <div className="w-full mt-10 flex items-center justify-center colorBg">
           <Swiper
-            modules={[Autoplay, FreeMode]}
-            slidesPerView={3}
+            modules={[Autoplay]}
+            slidesPerView={4}
+            spaceBetween={30}
             loop
-            speed={3000}
-            direction="horizontal" // tiempo alto para movimiento fluido
+            speed={10000}
             autoplay={{
               delay: 0, // sin pausa entre transiciones
-              disableOnInteraction: false,
             }}
-            freeMode={true}
             allowTouchMove={false}
-            className="w-full swiper-transition"
+            className="swiper-transition"
           >
-            <SwiperSlide>
-              <div>
-                <img className="" src={bancoEstadoIMG} alt="" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div>
-                <img className="" src={puertoDeIdeasIMG} alt="" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div>
-                <img className="" src={biceVidaIMG} alt="" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div>
-                <img className="" src={cajaLosAndesIMG} alt="" />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div>
-                <img className="" src={unicardIMG} alt="" />
-              </div>
-            </SwiperSlide>
+            {dataEmpresas.map((empresa) => (
+              <SwiperSlide>
+                  <img className="" src={empresa.img} alt="" />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>
