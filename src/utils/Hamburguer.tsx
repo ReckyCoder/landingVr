@@ -91,11 +91,11 @@ export default function Hamburguer({isActivateHamburgerState, isVisibleHamburgue
                         :
                         (
                             <>
-                                <li className='flex items-center gap-2'>
+                                <li className='flex items-center gap-2 h-full'>
                                     <NavLink
                                     to="/trabaja-con-nosotros"
                                     className={({ isActive }) =>
-                                        `${isActive ? 'text-(--color-primary-red) border-b-2 border-(--color-primary-red)' : ''} flex items-center hover:text-(--color-primary-red)`
+                                        `${isActive ? 'text-(--color-primary-red) border-b-2 border-(--color-primary-red)' : ''} flex items-center h-full hover:text-(--color-primary-red)`
                                     }
                                     >
                                     {({ isActive }) => (
