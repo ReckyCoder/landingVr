@@ -1,4 +1,5 @@
 import type { TransformacionDigitalItem } from "../TabsServicios";
+import { useNavigate } from "react-router-dom";
 
 import circlePlus from "@img/servicios/circlePlus.png";
 
@@ -8,8 +9,15 @@ type CardTransformacionDigitalProps = {
 export default function CardTransformacionDigital({
   item,
 }: CardTransformacionDigitalProps) {
+  const navigate = useNavigate();
+
+  const redirectDetalleServicios = (id: number) => {
+    navigate(`/servicios/${id}`);
+  };
+
   return (
     <div
+      onClick={() => redirectDetalleServicios(item.id)}
       className={`relative w-full max-w-sm h-[346px] group overflow-hidden rounded-xl bg-white border border-[#E5E5E5] ${item.tipoCard}  `}
     >
       {/* Contenido frontal */}

@@ -17,6 +17,7 @@ interface ContenidoReverso {
 }
 
 export type TransformacionDigitalItem = {
+  id: number;
   imagenPortada: string;
   tituloPortada: string;
   contenidoPortada: string;
@@ -46,6 +47,7 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
   useEffect(() => {
     let arrayTransformacionDigital: TransformacionDigitalItem[] = [
       {
+        id: 1,
         imagenPortada: Iconresponse,
         tituloPortada: "Experiencia digital y desarrollo de proyectos",
         contenidoPortada:
@@ -64,6 +66,7 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
         verDetalle: false,
       },
       {
+        id: 2,
         imagenPortada: iconComputer,
         tituloPortada: "Diseño digital",
         contenidoPortada:
@@ -82,6 +85,7 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
         verDetalle: false,
       },
       {
+        id: 3,
         imagenPortada: iconAiRobot,
         tituloPortada: "Desarrollo web",
         contenidoPortada:
@@ -100,6 +104,7 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
         verDetalle: false,
       },
       {
+        id: 4,
         imagenPortada: iconAirPlane,
         tituloPortada: "Analistas de Riesgo TI",
         contenidoPortada:
@@ -118,6 +123,7 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
         verDetalle: false,
       },
       {
+        id: 5,
         imagenPortada: iconAirPlane,
         tituloPortada: "Director de proyecto",
         contenidoPortada:
