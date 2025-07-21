@@ -1,5 +1,3 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import { useState } from "react";
 import texto from "@json/home.json";
 import "@node_modules/swiper/swiper.css";

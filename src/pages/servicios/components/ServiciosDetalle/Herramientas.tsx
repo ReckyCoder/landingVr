@@ -1,5 +1,4 @@
 import type { HerramientaDigitalItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
-import type { TransformacionDigitalItem } from "../TabsServicios";
 
 type HerramientasProps = {
   items: HerramientaDigitalItem[];

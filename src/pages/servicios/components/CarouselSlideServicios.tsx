@@ -1,15 +1,7 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-import ConfianEnNosotros from "@/components/ConfianEnNosotros";
-import Contacto from "@/components/Contacto";
-
-import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
-import iconCarouselAppianServicios from "@img/servicios/imagenCarouselAppian.png";
-import { useEffect, useState } from "react";
 
 import "swiper/css/pagination";
 import type { CarouselSlideServiciosItem } from "../Servicios";

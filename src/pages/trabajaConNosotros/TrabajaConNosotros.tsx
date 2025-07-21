@@ -1,6 +1,3 @@
-import Contacto from "@/components/Contacto";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -130,6 +127,7 @@ export default function TrabajaConNosotros() {
 
     let dataArrayOfertas: TransformacionDigitalItem[] = [
       {
+        id: 1,
         imagenPortada: Iconresponse,
         tituloPortada: "Desarrollador Full Stack Semi Senior",
         contenidoPortada:
@@ -142,6 +140,7 @@ export default function TrabajaConNosotros() {
         verDetalle: true,
       },
       {
+        id: 2,
         imagenPortada: Iconresponse,
         tituloPortada: "Desarrollador Full Stack Semi Senior",
         contenidoPortada:
@@ -154,6 +153,7 @@ export default function TrabajaConNosotros() {
         verDetalle: true,
       },
       {
+        id: 3,
         imagenPortada: iconComputer,
         tituloPortada: "Diseñador UX-UI",
         contenidoPortada:
@@ -166,6 +166,7 @@ export default function TrabajaConNosotros() {
         verDetalle: true,
       },
       {
+        id: 4,
         imagenPortada: iconAiRobot,
         tituloPortada: "Desarrollador APPIAN",
         contenidoPortada:
@@ -178,6 +179,7 @@ export default function TrabajaConNosotros() {
         verDetalle: true,
       },
       {
+        id: 5,
         imagenPortada: iconAirPlane,
         tituloPortada: "Analistas de Riesgo TI ",
         contenidoPortada:
@@ -190,6 +192,7 @@ export default function TrabajaConNosotros() {
         verDetalle: true,
       },
       {
+        id: 6,
         imagenPortada: iconAirPlane,
         tituloPortada: "Director de proyecto",
         contenidoPortada:
