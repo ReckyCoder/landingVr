@@ -15,19 +15,25 @@ import Footer from '@/components/Footer';
 export default function Home() {
 
     const [isActivateHamburgerState, setHamburguer] = useState(false);
-    const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(true)
+    const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(false)
 
     const headerRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
-        const handleResize = () => {
-            setisVisibleHamburguer(window.innerWidth < 768);
-        };
+         const handleResize = () => setisVisibleHamburguer(window.innerWidth < 768);
 
+        // Ejecutar inmediatamente al montar
+        handleResize();
+
+        // Escuchar eventos de resize
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
 
+        // Limpiar el event listener cuando el componente se desmonte
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, [])
+
 
     const changeHamburguer = (isActive: boolean, headerRef: RefObject<HTMLElement> | null, setIsHeader: React.Dispatch<React.SetStateAction<boolean>>) => {
         setHamburguer(isActive);
@@ -59,7 +65,7 @@ export default function Home() {
                 <img className='object-cover h-[900px] w-full' src={bgHome} alt="" />
                 <div className={isVisibleHamburguerState ? 'invisible' : "absolute z-2 bottom-20 left-20 flex flex-col items-center gap-10"}>
                     <a href="https://www.linkedin.com/company/vr-group-chile/" target='_blank'>
-                        <img className='' src={linkedin} alt="" />
+                        <img className='w-[25px] h-[25px]' src={linkedin} alt="" />
                     </a>
                     <p className='text-white -rotate-90'>{texto.siguenos}</p>
                 </div>
@@ -70,7 +76,6 @@ export default function Home() {
             <Soluciones />
             <UltimosProyectos/>
             <Testimonios/>
-            <Footer/>
         </>
     )
 }
