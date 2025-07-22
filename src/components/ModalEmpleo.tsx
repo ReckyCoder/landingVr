@@ -17,7 +17,7 @@ export default function ModalEmpleo({ isOpen, item, setIsOpen }: MyModalProps) {
   return (
     <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="max-w-[759px] max-h-screen overflow-y-auto transform rounded-2xl bg-white px-13 py-10 text-left align-middle shadow-xl transition-all relative">
+          <DialogPanel className="max-w-[759px] max-h-screen overflow-y-auto transform rounded-2xl bg-white px-13 py-10 text-left align-middle shadow-lg transition-all relative">
               <DialogTitle className="text-lg font-medium text-gray-900 text-[22px] mt-3">
                 Acerca del empleo:
                 <div className="flex justify-center absolute top-7 right-10">

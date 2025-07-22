@@ -4,7 +4,7 @@ import bgHome from "@img/bg-home.png";
 import conocenos from "@img/conócenos.png";
 import linkedin from "@img/linkedin.png";
 import texto from "@json/home.json";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ServiciosYConsultoria from "./components/ServiciosYConsultoria";
 import Soluciones from "./components/Soluciones";
 import UltimosProyectos from "./components/UltimosProyectos";
@@ -13,8 +13,6 @@ import Contacto from "@/components/Contacto";
 
 export default function Home() {
   const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(false);
-
-  const headerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleResize = () => setisVisibleHamburguer(window.innerWidth < 768);
@@ -31,24 +29,11 @@ export default function Home() {
     };
   }, []);
 
-  /*
-  const changeHamburguer = (
-    isActive: boolean,
-    headerRef: RefObject<HTMLElement> | null,
-    setIsHeader: React.Dispatch<React.SetStateAction<boolean>>
-  ) => {
-    setHamburguer(isActive);
-    console.log(headerRef?.current.tagName);
-    if (headerRef?.current.tagName !== "HEADER") {
-      setIsHeader(false);
-    }
-  };*/
-
   return (
     <>
       <section className="relative flex flex-col">
         <div className="absolute flex flex-col items-center w-full z-2">
-          <div ref={headerRef} className="absolute right-0 pr-10 top-15"></div>
+          <div className="absolute right-0 pr-10 top-15"></div>
           <img
             className="w-[81px] md:w-[155px] transition-all duration-500"
             src={gradient}
