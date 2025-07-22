@@ -16,6 +16,19 @@ interface ContenidoReverso {
   subtitulo3: string;
 }
 
+export type AcercaDelEmpleo = {
+  contenidoAcercaDe: string,
+  queBuscamos: {
+    caracteristica: string
+  }[],
+  requisitos: {
+    requisito: string
+  }[],
+  habilidadesValoradas: {
+    habilidad: string
+  }[]
+}
+
 export type TransformacionDigitalItem = {
   id: number;
   imagenPortada: string;
@@ -31,6 +44,7 @@ export type TransformacionDigitalItem = {
 
   tipoCard: "card-red" | "card-gray";
   verDetalle: boolean;
+  acercaDelEmpleo?: AcercaDelEmpleo
 };
 
 type TabsServiciosProps = {

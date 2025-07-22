@@ -72,7 +72,7 @@ export default function Home() {
         <div
           className={
             isVisibleHamburguerState
-              ? "invisible"
+              ? "hidden"
               : "absolute z-2 bottom-20 left-20 flex flex-col items-center gap-10"
           }
         >

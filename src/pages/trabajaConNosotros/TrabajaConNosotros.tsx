@@ -57,6 +57,8 @@ export default function TrabajaConNosotros() {
     []
   );
 
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     let arrayItemServicios: CarouselSlideServiciosDetalleItem[] = [
       {
@@ -138,6 +140,63 @@ export default function TrabajaConNosotros() {
         isCircle: false,
         tipoCard: "card-red",
         verDetalle: true,
+        acercaDelEmpleo: {
+          contenidoAcercaDe: "Estamos en búsqueda de un/a Full Stack Developer apasionado/a por el desarrollo de software y con al menos 3 años de experiencia en el sector. Queremos incorporar a alguien con una sólida base técnica que pueda trabajar tanto en el frontend como en el backend, desarrollando soluciones innovadoras y eficientes en un entorno dinámico y colaborativo.",
+          queBuscamos: [
+            {
+              caracteristica: "Una persona motivada por resolver desafíos técnicos tanto en el frontend como en el backend.",
+            } ,
+            {
+              caracteristica: "Alguien con pasión por la excelencia y un enfoque en la optimización de procesos y buenas prácticas.",
+            },
+            {
+              caracteristica: "Una persona orientada al trabajo en equipo, que disfrute colaborando en un entorno ágil y dinámico.",
+            },
+            {
+              caracteristica: "Disponibilidad Inmediata.",
+            }
+          ],
+          requisitos: [
+            {
+              requisito: "Experiencia: Mínimo 3 años como Full Stack Developer o en roles similares.",
+            },
+            {
+              requisito: "Backend: Experiencia sólida en Java (Excluyente) en versiones 8, 11, 17, 20.Frameworks como Spring Framework y Spring Boot.",
+            },
+            {
+              requisito: "Frontend: Dominio de tecnologías de frontend como React, Angular o Vue.js.",
+            },
+            {
+              requisito: "APIs RESTful: Construcción y consumo de APIs, así como conocimiento en estándares de integración.",
+            },
+            {
+              requisito: "Bases de datos: Conocimientos avanzados en SQL (procedimientos almacenados, diseño de esquemas) y bases de datos no relacionales como MongoDB.",
+            },
+            {
+              requisito: "Control de versiones: Uso competente de herramientas como Git.",
+            },
+            {
+              requisito: "Pruebas: Experiencia en testing con herramientas como JUnit, Mockito o Jest.",
+            },
+            {
+              requisito: "Metodologías ágiles: Familiaridad con Scrum o Kanban.",
+            },
+            {
+              requisito: "CI/CD: Experiencia con herramientas como Jenkins o Kubernetes (EKS).",
+            },
+            {
+              requisito: "Cloud Computing: Conocimientos de AWS para desarrollo en la nube."
+            }
+          ],
+          habilidadesValoradas: [
+            {
+              habilidad: "Experiencia con Quarkus para microservicios.",
+            },
+            {
+              habilidad: "Capacidad para aportar ideas creativas y resolver problemas complejos en el desarrollo full stack."
+            }
+          ]
+        },
       },
       {
         id: 2,
@@ -151,6 +210,63 @@ export default function TrabajaConNosotros() {
         isCircle: false,
         tipoCard: "card-red",
         verDetalle: true,
+        acercaDelEmpleo: {
+          contenidoAcercaDe: "Estamos en búsqueda de un/a Full Stack Developer apasionado/a por el desarrollo de software y con al menos 3 años de experiencia en el sector. Queremos incorporar a alguien con una sólida base técnica que pueda trabajar tanto en el frontend como en el backend, desarrollando soluciones innovadoras y eficientes en un entorno dinámico y colaborativo.",
+          queBuscamos: [
+            {
+              caracteristica: "Una persona motivada por resolver desafíos técnicos tanto en el frontend como en el backend.",
+            } ,
+            {
+              caracteristica: "Alguien con pasión por la excelencia y un enfoque en la optimización de procesos y buenas prácticas.",
+            },
+            {
+              caracteristica: "Una persona orientada al trabajo en equipo, que disfrute colaborando en un entorno ágil y dinámico.",
+            },
+            {
+              caracteristica: "Disponibilidad Inmediata.",
+            }
+          ],
+          requisitos: [
+            {
+              requisito: "Experiencia: Mínimo 3 años como Full Stack Developer o en roles similares.",
+            },
+            {
+              requisito: "Backend: Experiencia sólida en Java (Excluyente) en versiones 8, 11, 17, 20.Frameworks como Spring Framework y Spring Boot.",
+            },
+            {
+              requisito: "Frontend: Dominio de tecnologías de frontend como React, Angular o Vue.js.",
+            },
+            {
+              requisito: "APIs RESTful: Construcción y consumo de APIs, así como conocimiento en estándares de integración.",
+            },
+            {
+              requisito: "Bases de datos: Conocimientos avanzados en SQL (procedimientos almacenados, diseño de esquemas) y bases de datos no relacionales como MongoDB.",
+            },
+            {
+              requisito: "Control de versiones: Uso competente de herramientas como Git.",
+            },
+            {
+              requisito: "Pruebas: Experiencia en testing con herramientas como JUnit, Mockito o Jest.",
+            },
+            {
+              requisito: "Metodologías ágiles: Familiaridad con Scrum o Kanban.",
+            },
+            {
+              requisito: "CI/CD: Experiencia con herramientas como Jenkins o Kubernetes (EKS).",
+            },
+            {
+              requisito: "Cloud Computing: Conocimientos de AWS para desarrollo en la nube."
+            }
+          ],
+          habilidadesValoradas: [
+            {
+              habilidad: "Experiencia con Quarkus para microservicios.",
+            },
+            {
+              habilidad: "Capacidad para aportar ideas creativas y resolver problemas complejos en el desarrollo full stack."
+            }
+          ]
+        },
       },
       {
         id: 3,
@@ -164,6 +280,63 @@ export default function TrabajaConNosotros() {
         isCircle: false,
         tipoCard: "card-red",
         verDetalle: true,
+        acercaDelEmpleo: {
+          contenidoAcercaDe: "Estamos en búsqueda de un/a Full Stack Developer apasionado/a por el desarrollo de software y con al menos 3 años de experiencia en el sector. Queremos incorporar a alguien con una sólida base técnica que pueda trabajar tanto en el frontend como en el backend, desarrollando soluciones innovadoras y eficientes en un entorno dinámico y colaborativo.",
+          queBuscamos: [
+            {
+              caracteristica: "Una persona motivada por resolver desafíos técnicos tanto en el frontend como en el backend.",
+            } ,
+            {
+              caracteristica: "Alguien con pasión por la excelencia y un enfoque en la optimización de procesos y buenas prácticas.",
+            },
+            {
+              caracteristica: "Una persona orientada al trabajo en equipo, que disfrute colaborando en un entorno ágil y dinámico.",
+            },
+            {
+              caracteristica: "Disponibilidad Inmediata.",
+            }
+          ],
+          requisitos: [
+            {
+              requisito: "Experiencia: Mínimo 3 años como Full Stack Developer o en roles similares.",
+            },
+            {
+              requisito: "Backend: Experiencia sólida en Java (Excluyente) en versiones 8, 11, 17, 20.Frameworks como Spring Framework y Spring Boot.",
+            },
+            {
+              requisito: "Frontend: Dominio de tecnologías de frontend como React, Angular o Vue.js.",
+            },
+            {
+              requisito: "APIs RESTful: Construcción y consumo de APIs, así como conocimiento en estándares de integración.",
+            },
+            {
+              requisito: "Bases de datos: Conocimientos avanzados en SQL (procedimientos almacenados, diseño de esquemas) y bases de datos no relacionales como MongoDB.",
+            },
+            {
+              requisito: "Control de versiones: Uso competente de herramientas como Git.",
+            },
+            {
+              requisito: "Pruebas: Experiencia en testing con herramientas como JUnit, Mockito o Jest.",
+            },
+            {
+              requisito: "Metodologías ágiles: Familiaridad con Scrum o Kanban.",
+            },
+            {
+              requisito: "CI/CD: Experiencia con herramientas como Jenkins o Kubernetes (EKS).",
+            },
+            {
+              requisito: "Cloud Computing: Conocimientos de AWS para desarrollo en la nube."
+            }
+          ],
+          habilidadesValoradas: [
+            {
+              habilidad: "Experiencia con Quarkus para microservicios.",
+            },
+            {
+              habilidad: "Capacidad para aportar ideas creativas y resolver problemas complejos en el desarrollo full stack."
+            }
+          ]
+        },
       },
       {
         id: 4,
@@ -177,6 +350,63 @@ export default function TrabajaConNosotros() {
         isCircle: false,
         tipoCard: "card-gray",
         verDetalle: true,
+        acercaDelEmpleo: {
+          contenidoAcercaDe: "Estamos en búsqueda de un/a Full Stack Developer apasionado/a por el desarrollo de software y con al menos 3 años de experiencia en el sector. Queremos incorporar a alguien con una sólida base técnica que pueda trabajar tanto en el frontend como en el backend, desarrollando soluciones innovadoras y eficientes en un entorno dinámico y colaborativo.",
+          queBuscamos: [
+            {
+              caracteristica: "Una persona motivada por resolver desafíos técnicos tanto en el frontend como en el backend.",
+            } ,
+            {
+              caracteristica: "Alguien con pasión por la excelencia y un enfoque en la optimización de procesos y buenas prácticas.",
+            },
+            {
+              caracteristica: "Una persona orientada al trabajo en equipo, que disfrute colaborando en un entorno ágil y dinámico.",
+            },
+            {
+              caracteristica: "Disponibilidad Inmediata.",
+            }
+          ],
+          requisitos: [
+            {
+              requisito: "Experiencia: Mínimo 3 años como Full Stack Developer o en roles similares.",
+            },
+            {
+              requisito: "Backend: Experiencia sólida en Java (Excluyente) en versiones 8, 11, 17, 20.Frameworks como Spring Framework y Spring Boot.",
+            },
+            {
+              requisito: "Frontend: Dominio de tecnologías de frontend como React, Angular o Vue.js.",
+            },
+            {
+              requisito: "APIs RESTful: Construcción y consumo de APIs, así como conocimiento en estándares de integración.",
+            },
+            {
+              requisito: "Bases de datos: Conocimientos avanzados en SQL (procedimientos almacenados, diseño de esquemas) y bases de datos no relacionales como MongoDB.",
+            },
+            {
+              requisito: "Control de versiones: Uso competente de herramientas como Git.",
+            },
+            {
+              requisito: "Pruebas: Experiencia en testing con herramientas como JUnit, Mockito o Jest.",
+            },
+            {
+              requisito: "Metodologías ágiles: Familiaridad con Scrum o Kanban.",
+            },
+            {
+              requisito: "CI/CD: Experiencia con herramientas como Jenkins o Kubernetes (EKS).",
+            },
+            {
+              requisito: "Cloud Computing: Conocimientos de AWS para desarrollo en la nube."
+            }
+          ],
+          habilidadesValoradas: [
+            {
+              habilidad: "Experiencia con Quarkus para microservicios.",
+            },
+            {
+              habilidad: "Capacidad para aportar ideas creativas y resolver problemas complejos en el desarrollo full stack."
+            }
+          ]
+        },
       },
       {
         id: 5,
@@ -190,6 +420,63 @@ export default function TrabajaConNosotros() {
         isCircle: false,
         tipoCard: "card-red",
         verDetalle: true,
+        acercaDelEmpleo: {
+          contenidoAcercaDe: "Estamos en búsqueda de un/a Full Stack Developer apasionado/a por el desarrollo de software y con al menos 3 años de experiencia en el sector. Queremos incorporar a alguien con una sólida base técnica que pueda trabajar tanto en el frontend como en el backend, desarrollando soluciones innovadoras y eficientes en un entorno dinámico y colaborativo.",
+          queBuscamos: [
+            {
+              caracteristica: "Una persona motivada por resolver desafíos técnicos tanto en el frontend como en el backend.",
+            } ,
+            {
+              caracteristica: "Alguien con pasión por la excelencia y un enfoque en la optimización de procesos y buenas prácticas.",
+            },
+            {
+              caracteristica: "Una persona orientada al trabajo en equipo, que disfrute colaborando en un entorno ágil y dinámico.",
+            },
+            {
+              caracteristica: "Disponibilidad Inmediata.",
+            }
+          ],
+          requisitos: [
+            {
+              requisito: "Experiencia: Mínimo 3 años como Full Stack Developer o en roles similares.",
+            },
+            {
+              requisito: "Backend: Experiencia sólida en Java (Excluyente) en versiones 8, 11, 17, 20.Frameworks como Spring Framework y Spring Boot.",
+            },
+            {
+              requisito: "Frontend: Dominio de tecnologías de frontend como React, Angular o Vue.js.",
+            },
+            {
+              requisito: "APIs RESTful: Construcción y consumo de APIs, así como conocimiento en estándares de integración.",
+            },
+            {
+              requisito: "Bases de datos: Conocimientos avanzados en SQL (procedimientos almacenados, diseño de esquemas) y bases de datos no relacionales como MongoDB.",
+            },
+            {
+              requisito: "Control de versiones: Uso competente de herramientas como Git.",
+            },
+            {
+              requisito: "Pruebas: Experiencia en testing con herramientas como JUnit, Mockito o Jest.",
+            },
+            {
+              requisito: "Metodologías ágiles: Familiaridad con Scrum o Kanban.",
+            },
+            {
+              requisito: "CI/CD: Experiencia con herramientas como Jenkins o Kubernetes (EKS).",
+            },
+            {
+              requisito: "Cloud Computing: Conocimientos de AWS para desarrollo en la nube."
+            }
+          ],
+          habilidadesValoradas: [
+            {
+              habilidad: "Experiencia con Quarkus para microservicios.",
+            },
+            {
+              habilidad: "Capacidad para aportar ideas creativas y resolver problemas complejos en el desarrollo full stack."
+            }
+          ]
+        },
       },
       {
         id: 6,
@@ -203,6 +490,63 @@ export default function TrabajaConNosotros() {
         isCircle: false,
         tipoCard: "card-gray",
         verDetalle: true,
+        acercaDelEmpleo: {
+          contenidoAcercaDe: "Estamos en búsqueda de un/a Full Stack Developer apasionado/a por el desarrollo de software y con al menos 3 años de experiencia en el sector. Queremos incorporar a alguien con una sólida base técnica que pueda trabajar tanto en el frontend como en el backend, desarrollando soluciones innovadoras y eficientes en un entorno dinámico y colaborativo.",
+          queBuscamos: [
+            {
+              caracteristica: "Una persona motivada por resolver desafíos técnicos tanto en el frontend como en el backend.",
+            } ,
+            {
+              caracteristica: "Alguien con pasión por la excelencia y un enfoque en la optimización de procesos y buenas prácticas.",
+            },
+            {
+              caracteristica: "Una persona orientada al trabajo en equipo, que disfrute colaborando en un entorno ágil y dinámico.",
+            },
+            {
+              caracteristica: "Disponibilidad Inmediata.",
+            }
+          ],
+          requisitos: [
+            {
+              requisito: "Experiencia: Mínimo 3 años como Full Stack Developer o en roles similares.",
+            },
+            {
+              requisito: "Backend: Experiencia sólida en Java (Excluyente) en versiones 8, 11, 17, 20.Frameworks como Spring Framework y Spring Boot.",
+            },
+            {
+              requisito: "Frontend: Dominio de tecnologías de frontend como React, Angular o Vue.js.",
+            },
+            {
+              requisito: "APIs RESTful: Construcción y consumo de APIs, así como conocimiento en estándares de integración.",
+            },
+            {
+              requisito: "Bases de datos: Conocimientos avanzados en SQL (procedimientos almacenados, diseño de esquemas) y bases de datos no relacionales como MongoDB.",
+            },
+            {
+              requisito: "Control de versiones: Uso competente de herramientas como Git.",
+            },
+            {
+              requisito: "Pruebas: Experiencia en testing con herramientas como JUnit, Mockito o Jest.",
+            },
+            {
+              requisito: "Metodologías ágiles: Familiaridad con Scrum o Kanban.",
+            },
+            {
+              requisito: "CI/CD: Experiencia con herramientas como Jenkins o Kubernetes (EKS).",
+            },
+            {
+              requisito: "Cloud Computing: Conocimientos de AWS para desarrollo en la nube."
+            }
+          ],
+          habilidadesValoradas: [
+            {
+              habilidad: "Experiencia con Quarkus para microservicios.",
+            },
+            {
+              habilidad: "Capacidad para aportar ideas creativas y resolver problemas complejos en el desarrollo full stack."
+            }
+          ]
+        },
       },
     ];
     setArrayOfertas(dataArrayOfertas);
@@ -256,9 +600,9 @@ export default function TrabajaConNosotros() {
           Nuestras <label className="colorRed">ofertas...</label>
         </span>
 
-        <div className="w-[100%] animate-fade-in max-w-6xl mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+        <div className={`${isOpen ? 'blur-sm' : ''} w-[100%] animate-fade-in max-w-6xl mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center`}>
           {arrayOfertas.map((item, index) => (
-            <CardTransformacionDigital key={index} item={item} />
+            <CardTransformacionDigital key={index} item={item} setIsOpen={setIsOpen} isOpen={isOpen} />
           ))}
         </div>
       </div>
