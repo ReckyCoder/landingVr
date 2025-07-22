@@ -1,11 +1,10 @@
 import { SwiperSlide } from "swiper/react";
+
+import type { CarouselSlideServiciosItem } from "../Servicios";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-import "swiper/css/pagination";
-import type { CarouselSlideServiciosItem } from "../Servicios";
-
 interface CarouselSlideServiciosProps {
   item: CarouselSlideServiciosItem;
 }

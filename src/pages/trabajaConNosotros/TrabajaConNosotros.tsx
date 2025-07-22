@@ -1,7 +1,15 @@
+import { useEffect, useState } from "react";
+
+import CarouselHeader from "../home/components/CarouselHeader";
+import CardSimple from "@/components/Card/CardSimple";
+import CardTransformacionDigital from "../servicios/components/transformacionDigital/CardTransformacionDigital";
+import Postula from "@/components/Formularios/Postula";
+import ModalEmpleo from "@/components/Modal/ModalEmpleo";
+
+import type { TransformacionDigitalItem } from "../servicios/components/TabsServicios";
+
 import "swiper/css";
 import "swiper/css/navigation";
-
-import { useEffect, useState } from "react";
 
 import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
 import iconRectangularVr from "@img/home/rectangularVr.png";
@@ -15,13 +23,7 @@ import iconAiRobot from "@img/servicios/ai-robot.png";
 import iconAirPlane from "@img/servicios/air-plane.png";
 
 import imageCarouselDetalleServicios from "@img/servicios/detalle-servicios/imagenCarouselDetalleServicios.png";
-import CarouselHeader from "../home/components/CarouselHeader";
-import CardSimple from "@/components/Card/CardSimple";
 
-import CardTransformacionDigital from "../servicios/components/transformacionDigital/CardTransformacionDigital";
-import type { TransformacionDigitalItem } from "../servicios/components/TabsServicios";
-import Postula from "@/components/Formularios/Postula";
-import ModalEmpleo from "@/components/Modal/ModalEmpleo";
 
 export interface OverlayConfig {
   imagenOverlay: string;

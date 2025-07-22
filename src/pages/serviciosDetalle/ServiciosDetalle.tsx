@@ -1,6 +1,13 @@
+import { useEffect, useState } from "react";
+
 import Contacto from "@/components/Formularios/Contacto";
 import ConfianEnNosotros from "@/components/Others/ConfianEnNosotros";
-import { useEffect, useState } from "react";
+import CarouselHeader from "../home/components/CarouselHeader";
+import CardSimple from "@/components/Card/CardSimple";
+import Herramientas from "../servicios/components/ServiciosDetalle/Herramientas";
+import DetalleServicios from "../servicios/components/DetalleServicios";
+
+import type { DetalleServiciosItem } from "../servicios/Servicios";
 
 import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
 import iconRectangularVr from "@img/home/rectangularVr.png";
@@ -15,11 +22,6 @@ import iconGoogleAnalitics from "@img/servicios/detalle-servicios/iconGoogleAnal
 import iconOw from "@img/servicios/detalle-servicios/iconOw.png";
 
 import imageCarouselDetalleServicios from "@img/servicios/detalle-servicios/imagenCarouselDetalleServicios.png";
-import CarouselHeader from "../home/components/CarouselHeader";
-import CardSimple from "@/components/Card/CardSimple";
-import Herramientas from "../servicios/components/ServiciosDetalle/Herramientas";
-import DetalleServicios from "../servicios/components/DetalleServicios";
-import type { DetalleServiciosItem } from "../servicios/Servicios";
 
 export interface OverlayConfig {
   imagenOverlay: string;

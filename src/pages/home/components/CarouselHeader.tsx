@@ -1,10 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import Siguenos from "@/components/Others/Siguenos";
+import type { CarouselSlideServiciosDetalleItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import type { CarouselSlideServiciosDetalleItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
-import Siguenos from "@/components/Others/Siguenos";
 
 type CarouselHeaderProps = {
   arrayItems: CarouselSlideServiciosDetalleItem[];

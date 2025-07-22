@@ -1,10 +1,10 @@
 // components/ServiciosCarousel.tsx
+import type { ActividadItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
+import type { ReactNode } from "@node_modules/@types/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import type { ActividadItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
-import type { ReactNode } from "@node_modules/@types/react";
 
 type CardSimpleProps = {
   className?: string;

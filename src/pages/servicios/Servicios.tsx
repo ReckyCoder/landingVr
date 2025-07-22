@@ -1,16 +1,18 @@
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+
 import TabsServicios from "./components/TabsServicios";
 import TecnologiasServicios from "./components/TecnologiasServicios";
 import DetalleServicios from "./components/DetalleServicios";
 import ConfianEnNosotros from "@/components/Others/ConfianEnNosotros";
 import Contacto from "@/components/Formularios/Contacto";
 
+import "swiper/css";
+import "swiper/css/navigation";
+
 import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
 import iconCarouselAppianServicios from "@img/servicios/imagenCarouselAppian.png";
-import { useEffect, useState } from "react";
 
 export interface OverlayConfig {
   imagenOverlay: string;

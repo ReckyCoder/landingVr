@@ -1,48 +1,50 @@
-import texto from "@json/home.json";
-import rectangle from "@img/home/rectangle.png";
-import project1 from "@img/home/project1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
+import data from "@json/home.json";
+
+import rectangle from "@img/home/rectangle.png";
+import project1 from "@img/home/project1.png";
 
 export default function UltimosProyectos() {
   const dataProyectos = [
     {
       proyecto: {
-        titulo: texto.casosVR,
-        subTitulo: texto.puertoDeIdeas,
-        descripcion: texto.proyectoExperiencia,
+        titulo: data.casosVR,
+        subTitulo: data.puertoDeIdeas,
+        descripcion: data.proyectoExperiencia,
       },
       img: project1,
       contenido: {
-        titulo: texto.loremShort,
-        subTitulo: texto.lorem,
-        link: texto.verDetalle,
+        titulo: data.loremShort,
+        subTitulo: data.lorem,
+        link: data.verDetalle,
       },
     },
     {
       proyecto: {
-        titulo: texto.casosVR,
-        subTitulo: texto.puertoDeIdeas,
-        descripcion: texto.proyectoExperiencia,
+        titulo: data.casosVR,
+        subTitulo: data.puertoDeIdeas,
+        descripcion: data.proyectoExperiencia,
       },
       img: project1,
       contenido: {
-        titulo: texto.loremShort,
-        subTitulo: texto.lorem,
-        link: texto.verDetalle,
+        titulo: data.loremShort,
+        subTitulo: data.lorem,
+        link: data.verDetalle,
       },
     },
     {
       proyecto: {
-        titulo: texto.casosVR,
-        subTitulo: texto.puertoDeIdeas,
-        descripcion: texto.proyectoExperiencia,
+        titulo: data.casosVR,
+        subTitulo: data.puertoDeIdeas,
+        descripcion: data.proyectoExperiencia,
       },
       img: project1,
       contenido: {
-        titulo: texto.loremShort,
-        subTitulo: texto.lorem,
-        link: texto.verDetalle,
+        titulo: data.loremShort,
+        subTitulo: data.lorem,
+        link: data.verDetalle,
       },
     },
   ];
@@ -50,8 +52,8 @@ export default function UltimosProyectos() {
   return (
     <section className="flex flex-col items-center relative mb-20 2xl:mb-0 px-[5%]">
       <h2 className="font-bold text-[32px] my-20 text-center">
-        {texto.nuestros} <span className="colorRed">{texto.últimos}</span>{" "}
-        {texto.proyectos}
+        {data.nuestros} <span className="colorRed">{data.últimos}</span>{" "}
+        {data.proyectos}
       </h2>
 
       <div className="w-full swiper-projects">

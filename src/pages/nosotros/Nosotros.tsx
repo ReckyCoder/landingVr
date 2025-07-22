@@ -3,10 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules"; // <-- solo Pagination
 import ConfianEnNosotros from "@/components/Others/ConfianEnNosotros";
 import Contacto from "@/components/Formularios/Contacto";
-import CarouselHeader from "../home/components/CarouselHeader";
-import Equipo from "./Equipo";
+import CarouselHeader from "@pages/home/components/CarouselHeader";
+import DetalleServicios from "@pages/servicios/components/DetalleServicios";
+import Equipo from "@pages/nosotros/Equipo";
 
-import type { CarouselSlideServiciosDetalleItem } from "../serviciosDetalle/ServiciosDetalle";
+import type { CarouselSlideServiciosDetalleItem } from "@pages/serviciosDetalle/ServiciosDetalle";
+import type { DetalleServiciosItem } from "@pages/servicios/Servicios";
 
 import data from "@json/home.json";
 
@@ -36,8 +38,6 @@ import dato4 from "@img/nosotros/dato4.png";
 import imagenCarouselNosotros from "@img/nosotros/imagenCarouselNosotros.png";
 import iconRectangularVr from "@img/home/rectangularVr.png";
 import iconOvalVr from "@img/servicios/detalle-servicios/ovalVr.png";
-import DetalleServicios from "../servicios/components/DetalleServicios";
-import type { DetalleServiciosItem } from "../servicios/Servicios";
 
 export interface MiembrosDelEquipo {
   img: string;

@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules"; // <-- solo Pagination
+
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -7,6 +8,7 @@ import iconLogoScrum from "@img/servicios/tecnologias/logoScrum.png";
 import iconLogoPhp from "@img/servicios/tecnologias/logoPhp.png";
 import iconLogoAppian from "@img/servicios/tecnologias/logoAppian.png";
 import iconLogoReact from "@img/servicios/tecnologias/logoReact.png";
+
 type LanguageItem = {
   name: string;
   description: string;

@@ -1,15 +1,17 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CardTransformacionDigital from "./transformacionDigital/CardTransformacionDigital";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useEffect, useState } from "react";
+
 import Iconresponse from "@img/servicios/responsive.png";
 import Icondarts from "@img/servicios/darts.png";
 import iconComputer from "@img/servicios/computer-graphic.png";
 import iconAiRobot from "@img/servicios/ai-robot.png";
 import iconAirPlane from "@img/servicios/air-plane.png";
 
-import CardTransformacionDigital from "./transformacionDigital/CardTransformacionDigital";
 
 interface ContenidoReverso {
   subtitulo1: string;
