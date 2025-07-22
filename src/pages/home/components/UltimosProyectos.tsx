@@ -1,6 +1,6 @@
 import texto from "@json/home.json";
-import rectangle from "@img/rectangle.png";
-import project1 from "@img/project1.png";
+import rectangle from "@img/home/rectangle.png";
+import project1 from "@img/home/project1.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 

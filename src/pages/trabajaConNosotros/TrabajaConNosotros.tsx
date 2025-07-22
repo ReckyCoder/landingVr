@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import { useEffect, useState } from "react";
 
 import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
-import iconRectangularVr from "@img/rectangularVr.png";
+import iconRectangularVr from "@img/home/rectangularVr.png";
 import iconOvalVr from "@img/servicios/detalle-servicios/ovalVr.png";
 import iconDesktop from "@img/servicios/detalle-servicios/iconDesktop.png";
 
@@ -16,11 +16,12 @@ import iconAirPlane from "@img/servicios/air-plane.png";
 
 import imageCarouselDetalleServicios from "@img/servicios/detalle-servicios/imagenCarouselDetalleServicios.png";
 import CarouselHeader from "../home/components/CarouselHeader";
-import CardSimple from "@/components/CardSimple";
+import CardSimple from "@/components/Card/CardSimple";
 
 import CardTransformacionDigital from "../servicios/components/transformacionDigital/CardTransformacionDigital";
 import type { TransformacionDigitalItem } from "../servicios/components/TabsServicios";
-import Postula from "@/components/Postula";
+import Postula from "@/components/Formularios/Postula";
+import ModalEmpleo from "@/components/Modal/ModalEmpleo";
 
 export interface OverlayConfig {
   imagenOverlay: string;
@@ -56,6 +57,23 @@ export default function TrabajaConNosotros() {
   const [arrayOfertas, setArrayOfertas] = useState<TransformacionDigitalItem[]>(
     []
   );
+
+ const [itemSelectedState, setItemSelected] = useState<TransformacionDigitalItem>({
+  id: 0,
+  imagenPortada: "",
+  tituloPortada: "",
+  contenidoPortada: "",
+  tituloReverso: "",
+  isCircle: false,
+  tipoCard: "card-red",
+  verDetalle: false
+});
+  
+  const clickOpenModal = (item: TransformacionDigitalItem) => {
+    console.log("hola")
+    setItemSelected(item);  
+    setIsOpen(true);
+  }
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -602,11 +620,12 @@ export default function TrabajaConNosotros() {
 
         <div className={`${isOpen ? 'blur-sm' : ''} w-[100%] animate-fade-in max-w-6xl mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center`}>
           {arrayOfertas.map((item, index) => (
-            <CardTransformacionDigital key={index} item={item} setIsOpen={setIsOpen} isOpen={isOpen} />
+            <CardTransformacionDigital eventoOnClick={() => clickOpenModal(item)} key={index} item={item} />
           ))}
         </div>
+        
       </div>
-
+      <ModalEmpleo isOpen={isOpen}  item={itemSelectedState} setIsOpen={setIsOpen}/>
       <Postula />
     </>
   );

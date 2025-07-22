@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+
 import logoVr from "@img/home/logoVr2.png";
-import iconPerson from "@img/iconPerson.svg";
-import iconComent from "@img/iconComment.png";
+import iconPerson from "@img/navbar/iconPerson.svg";
+import iconComment from "@img/navbar/iconComment.png";
 import iconHamburger from "@img/navbar/iconHamburger.png";
 import iconClose from "@img/navbar/iconClose.png";
 
@@ -114,7 +115,7 @@ export default function Header({}: HeaderProps) {
               <i className="fa-regular fa-comment-dots text-lg"></i>
               Hablemos
             </NavLink>
-            <img className="w-[25px]" src={iconComent} />
+            <img className="w-[25px]" src={iconComment} />
           </div>
 
           {/* Icono hamburguesa visible en móvil */}

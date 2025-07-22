@@ -1,7 +1,8 @@
-import logoVr from "@img/logo-vr-group.png";
-import logoAppian from "@img/Appian.png";
-import linkedin from "@img/linkedin.png";
-import texto from "@json/home.json";
+import data from "@json/home.json";
+
+import logoVr from "@img/home/logoVr2.png";
+import logoAppian from "@img/home/Appian.png";
+import linkedin from "@img/home/linkedin.png";
 
 export default function Footer() {
   return (
@@ -12,11 +13,11 @@ export default function Footer() {
           src={logoVr}
           alt=""
         />
-        <p className="text-white">{texto.partnerShips}</p>
+        <p className="text-white">{data.partnerShips}</p>
         <img className="ms-5 md:ms-0" src={logoAppian} alt="" />
       </div>
       <div className="flex gap-x-7 items-center">
-        <p className="text-white">{texto.siguenos}</p>
+        <p className="text-white">{data.siguenos}</p>
         <a
           href="https://www.linkedin.com/company/vr-group-chile/"
           target="_blank"

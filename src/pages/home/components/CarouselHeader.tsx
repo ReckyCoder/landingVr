@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import type { CarouselSlideServiciosDetalleItem } from "@/pages/serviciosDetalle/ServiciosDetalle";
+import Siguenos from "@/components/Others/Siguenos";
 
 type CarouselHeaderProps = {
   arrayItems: CarouselSlideServiciosDetalleItem[];
@@ -61,6 +62,7 @@ export default function CarouselHeader({
           </SwiperSlide>
         ))}
       </Swiper>
+      <Siguenos />
     </section>
   );
 }

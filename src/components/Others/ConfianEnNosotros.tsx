@@ -1,12 +1,14 @@
-import texto from "@json/home.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import bancoEstadoIMG from "@img/bancoEstadoCobranzas.png";
-import puertoDeIdeasIMG from "@img/PuertoDeIdeas.png";
-import biceVidaIMG from "@img/BiceVida.png";
-import cajaLosAndesIMG from "@img/CajaLosAndes.png";
-import unicardIMG from "@img/Unicard.png";
+
+import data from "@json/home.json";
 import "swiper/css";
+
+import bancoEstadoIMG from "@img/confianEnNosotros/bancoEstadoCobranzas.png";
+import puertoDeIdeasIMG from "@img/confianEnNosotros/PuertoDeIdeas.png";
+import biceVidaIMG from "@img/confianEnNosotros/BiceVida.png";
+import cajaLosAndesIMG from "@img/confianEnNosotros/CajaLosAndes.png";
+import unicardIMG from "@img/confianEnNosotros/Unicard.png";
 
 export default function ConfianEnNosotros() {
 
@@ -32,7 +34,7 @@ export default function ConfianEnNosotros() {
     <>
       <div className="colorBg !h-[368px] w-full colorBg flex flex-col justify-center gap-10">
         <h2 className="text-white text-[30px] font-semibold text-center">
-          {texto.confian}
+          {data.confian}
         </h2>
 
         <div className="w-full mt-10 flex items-center justify-center colorBg">

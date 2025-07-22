@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules"; // <-- solo Pagination
-import ConfianEnNosotros from "@/components/ConfianEnNosotros";
-import Contacto from "@/components/Contacto";
+import ConfianEnNosotros from "@/components/Others/ConfianEnNosotros";
+import Contacto from "@/components/Formularios/Contacto";
 import CarouselHeader from "../home/components/CarouselHeader";
 import Equipo from "./Equipo";
 
@@ -13,28 +13,28 @@ import data from "@json/home.json";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import verticalRectangle from "@img/verticalGray.png";
-import horizontalRectangle from "@img/horizontalGray.png";
-import buttonExperience from "@img/experienceBTN.svg";
+import verticalRectangle from "@img/nosotros/verticalGray.png";
+import horizontalRectangle from "@img/nosotros/horizontalGray.png";
+import buttonExperience from "@img/nosotros/experienceBTN.svg";
 
-import number1 from "@img/1.png";
-import number2 from "@img/2.png";
-import number3 from "@img/3.png";
-import number4 from "@img/4.png";
-import circle from "@img/circle.png";
+import number1 from "@img/nosotros/1.png";
+import number2 from "@img/nosotros/2.png";
+import number3 from "@img/nosotros/3.png";
+import number4 from "@img/nosotros/4.png";
+import circle from "@img/home/circle.png";
 
-import socioFundador from "@img/VictorSagredoFundador.png";
-import cuadradoGris from "@img/SquareBgGray.png";
-import linkedin from "@img/linkedin.png";
-import twitter from "@img/twitter.png";
+import socioFundador from "@img/nosotros/VictorSagredoFundador.png";
+import cuadradoGris from "@img/nosotros/SquareBgGray.png";
+import linkedin from "@img/home/linkedin.png";
+import twitter from "@img/nosotros/twitter.png";
 
 import dato1 from "@img/nosotros/dato1.png";
 import dato2 from "@img/nosotros/dato2.png";
 import dato3 from "@img/nosotros/dato3.png";
 import dato4 from "@img/nosotros/dato4.png";
 
-import imagenCarouselNosotros from "@img/imagenCarouselNosotros.png";
-import iconRectangularVr from "@img/rectangularVr.png";
+import imagenCarouselNosotros from "@img/nosotros/imagenCarouselNosotros.png";
+import iconRectangularVr from "@img/home/rectangularVr.png";
 import iconOvalVr from "@img/servicios/detalle-servicios/ovalVr.png";
 import DetalleServicios from "../servicios/components/DetalleServicios";
 import type { DetalleServiciosItem } from "../servicios/Servicios";

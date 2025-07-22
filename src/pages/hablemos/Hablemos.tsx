@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import type { CarouselSlideServiciosDetalleItem } from "../serviciosDetalle/ServiciosDetalle";
 
-import Contacto from "@/components/Contacto";
+import Contacto from "@/components/Formularios/Contacto";
 import CarouselHeader from "../home/components/CarouselHeader";
-import ConfianEnNosotros from "@/components/ConfianEnNosotros";
+import ConfianEnNosotros from "@/components/Others/ConfianEnNosotros";
 
 import data from "@json/home.json";
 
-import imagenCarouselHablemos from "@img/imagenCarouselHablemos.png";
-import iconRectangularVr from "@img/rectangularVr.png";
+import imagenCarouselHablemos from "@img/hablemos/imagenCarouselHablemos.png";
+import iconRectangularVr from "@img/home/rectangularVr.png";
 import iconOvalVr from "@img/servicios/detalle-servicios/ovalVr.png";
 
 export default function Hablemos() {

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -52,6 +53,9 @@ type TabsServiciosProps = {
 };
 
 export default function TabsServicios({ className }: TabsServiciosProps) {
+  
+  const navigate = useNavigate();
+
   const [tipoContenido, setTipoContenido] = useState(1);
 
   const [arrayTransformacionDigital, setArrayTransformacionDigital] = useState<
@@ -159,6 +163,11 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
     setArrayTransformacionDigital(arrayTransformacionDigital);
   }, []);
 
+
+  const redirectDetalleServicios = (id: number) => {
+    navigate(`/servicios/${id}`);
+  };
+
   return (
     <section className={`tab-servicios px-4 mb-20 ${className}`}>
       {/* Tabs */}
@@ -195,7 +204,7 @@ export default function TabsServicios({ className }: TabsServiciosProps) {
         {tipoContenido === 1 && (
           <div className="animate-fade-in max-w-6xl mx-auto  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             {arrayTransformacionDigital.map((item, index) => (
-              <CardTransformacionDigital key={index} item={item} />
+              <CardTransformacionDigital eventoOnClick={() => redirectDetalleServicios(item.id)} key={index} item={item} />
             ))}
           </div>
         )}

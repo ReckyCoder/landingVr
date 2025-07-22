@@ -1,30 +1,22 @@
 import type { TransformacionDigitalItem } from "../TabsServicios";
-import ModalEmpleo from "@/components/ModalEmpleo";
-import { useNavigate } from "react-router-dom";
 
 import circlePlus from "@img/servicios/circlePlus.png";
-import { type Dispatch, type SetStateAction } from "react";
+
 
 type CardTransformacionDigitalProps = {
   item: TransformacionDigitalItem;
-  setIsOpen?: Dispatch<SetStateAction<boolean>>;
-  isOpen?: boolean;
+  eventoOnClick?: () => void;
 };
 export default function CardTransformacionDigital({
   item,
-  setIsOpen,
-  isOpen
+
+  eventoOnClick
 }: CardTransformacionDigitalProps) {
 
-  const navigate = useNavigate();
-
-  const redirectDetalleServicios = (id: number) => {
-    navigate(`/servicios/${id}`);
-  };
 
   return (
     <div
-      onClick={() => !item.verDetalle ? redirectDetalleServicios(item.id) : setIsOpen(true)}
+      onClick={eventoOnClick}
       className={`relative w-full max-w-sm h-[346px] group overflow-hidden rounded-xl bg-white border border-[#E5E5E5] ${item.tipoCard}  `}
     >
       {/* Contenido frontal */}
@@ -91,7 +83,6 @@ export default function CardTransformacionDigital({
           ) : undefined}
         </div>
       </div>
-        <ModalEmpleo isOpen={isOpen} item={item} setIsOpen={setIsOpen}/>
     </div>
   );
 }

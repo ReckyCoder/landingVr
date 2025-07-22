@@ -1,34 +1,18 @@
-import logoVr from "@img/logo-vr-group.png";
-import gradient from "@img/gradient.png";
-import bgHome from "@img/bg-home.png";
-import conocenos from "@img/conócenos.png";
-import linkedin from "@img/linkedin.png";
-import texto from "@json/home.json";
-import { useEffect, useState } from "react";
 import ServiciosYConsultoria from "./components/ServiciosYConsultoria";
 import Soluciones from "./components/Soluciones";
 import UltimosProyectos from "./components/UltimosProyectos";
 import Testimonios from "./components/Testimonios";
-import Contacto from "@/components/Contacto";
+import Contacto from "@/components/Formularios/Contacto";
+import Siguenos from "@/components/Others/Siguenos";
+
+import data from "@json/home.json";
+
+import logoVr from "@img/home/logo-vr-group.png";
+import gradient from "@img/home/gradient.png";
+import bgHome from "@img/home/bg-home.png";
+import conocenos from "@img/home/conócenos.png";
 
 export default function Home() {
-  const [isVisibleHamburguerState, setisVisibleHamburguer] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setisVisibleHamburguer(window.innerWidth < 768);
-
-    // Ejecutar inmediatamente al montar
-    handleResize();
-
-    // Escuchar eventos de resize
-    window.addEventListener("resize", handleResize);
-
-    // Limpiar el event listener cuando el componente se desmonte
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <>
       <section className="relative flex flex-col">
@@ -45,7 +29,7 @@ export default function Home() {
             alt=""
           />
           <div className="max-w-[560px] text-white">
-            <p className="mt-10 text-center leading-7">{texto.bienvenida}</p>
+            <p className="mt-10 text-center leading-7">{data.bienvenida}</p>
           </div>
           <img
             className="mt-20 motion-safe:animate-bounce"
@@ -54,21 +38,7 @@ export default function Home() {
           />
         </div>
         <img className="object-cover h-[900px] w-full" src={bgHome} alt="" />
-        <div
-          className={
-            isVisibleHamburguerState
-              ? "hidden"
-              : "absolute z-2 bottom-20 left-20 flex flex-col items-center gap-10"
-          }
-        >
-          <a
-            href="https://www.linkedin.com/company/vr-group-chile/"
-            target="_blank"
-          >
-            <img className="w-[25px] h-[25px]" src={linkedin} alt="" />
-          </a>
-          <p className="text-white -rotate-90">{texto.siguenos}</p>
-        </div>
+        <Siguenos/>
         <div className="bg-linear-to-b from-black/80 to-black/80 absolute h-full w-full"></div>
       </section>
 

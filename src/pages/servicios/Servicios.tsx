@@ -5,8 +5,8 @@ import "swiper/css/navigation";
 import TabsServicios from "./components/TabsServicios";
 import TecnologiasServicios from "./components/TecnologiasServicios";
 import DetalleServicios from "./components/DetalleServicios";
-import ConfianEnNosotros from "@/components/ConfianEnNosotros";
-import Contacto from "@/components/Contacto";
+import ConfianEnNosotros from "@/components/Others/ConfianEnNosotros";
+import Contacto from "@/components/Formularios/Contacto";
 
 import iconAppianServicios from "@img/servicios/LogoAppianServicios.png";
 import iconCarouselAppianServicios from "@img/servicios/imagenCarouselAppian.png";
@@ -34,6 +34,8 @@ export interface DetalleServiciosItem {
 }
 
 export default function Servicios() {
+
+
   const [arrayServiciosItem, setArrayServiciosItem] = useState<
     CarouselSlideServiciosItem[]
   >([]);
@@ -106,6 +108,9 @@ export default function Servicios() {
 
     setArrayDertalleServiciosItem(dataDetalleServiciosItem);
   }, []);
+
+
+  
 
   return (
     <>
