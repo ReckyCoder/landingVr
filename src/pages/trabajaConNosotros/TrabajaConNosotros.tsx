@@ -98,7 +98,7 @@ export default function TrabajaConNosotros() {
       },
       {
         imagen: iconAppianServicios,
-        titulo: "Lorem",
+        titulo: "Loremmmmmmmm",
         subtitulo: "Lorem ipsum dolor amet...",
         contenido:
           " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
