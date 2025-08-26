@@ -98,7 +98,7 @@ export default function TrabajaConNosotros() {
       },
       {
         imagen: iconAppianServicios,
-        titulo: "Loremmmmmmmm",
+        titulo: "Lorem",
         subtitulo: "Lorem ipsum dolor amet...",
         contenido:
           " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -220,76 +220,6 @@ export default function TrabajaConNosotros() {
       },
       {
         id: 2,
-        imagenPortada: Iconresponse,
-        tituloPortada: "Desarrollador Full Stack Semi Senior",
-        contenidoPortada:
-          "Estamos en búsqueda de un/a Full Stack Developer apasionado/a por el desarrollo de software y con al menos 3 años de experiencia en el sector. ...",
-
-        tituloReverso: "Ver detalle",
-
-        isCircle: false,
-        tipoCard: "card-red",
-        verDetalle: true,
-        acercaDelEmpleo: {
-          contenidoAcercaDe: "Estamos en búsqueda de un/a Full Stack Developer apasionado/a por el desarrollo de software y con al menos 3 años de experiencia en el sector. Queremos incorporar a alguien con una sólida base técnica que pueda trabajar tanto en el frontend como en el backend, desarrollando soluciones innovadoras y eficientes en un entorno dinámico y colaborativo.",
-          queBuscamos: [
-            {
-              caracteristica: "Una persona motivada por resolver desafíos técnicos tanto en el frontend como en el backend.",
-            } ,
-            {
-              caracteristica: "Alguien con pasión por la excelencia y un enfoque en la optimización de procesos y buenas prácticas.",
-            },
-            {
-              caracteristica: "Una persona orientada al trabajo en equipo, que disfrute colaborando en un entorno ágil y dinámico.",
-            },
-            {
-              caracteristica: "Disponibilidad Inmediata.",
-            }
-          ],
-          requisitos: [
-            {
-              requisito: "Experiencia: Mínimo 3 años como Full Stack Developer o en roles similares.",
-            },
-            {
-              requisito: "Backend: Experiencia sólida en Java (Excluyente) en versiones 8, 11, 17, 20.Frameworks como Spring Framework y Spring Boot.",
-            },
-            {
-              requisito: "Frontend: Dominio de tecnologías de frontend como React, Angular o Vue.js.",
-            },
-            {
-              requisito: "APIs RESTful: Construcción y consumo de APIs, así como conocimiento en estándares de integración.",
-            },
-            {
-              requisito: "Bases de datos: Conocimientos avanzados en SQL (procedimientos almacenados, diseño de esquemas) y bases de datos no relacionales como MongoDB.",
-            },
-            {
-              requisito: "Control de versiones: Uso competente de herramientas como Git.",
-            },
-            {
-              requisito: "Pruebas: Experiencia en testing con herramientas como JUnit, Mockito o Jest.",
-            },
-            {
-              requisito: "Metodologías ágiles: Familiaridad con Scrum o Kanban.",
-            },
-            {
-              requisito: "CI/CD: Experiencia con herramientas como Jenkins o Kubernetes (EKS).",
-            },
-            {
-              requisito: "Cloud Computing: Conocimientos de AWS para desarrollo en la nube."
-            }
-          ],
-          habilidadesValoradas: [
-            {
-              habilidad: "Experiencia con Quarkus para microservicios.",
-            },
-            {
-              habilidad: "Capacidad para aportar ideas creativas y resolver problemas complejos en el desarrollo full stack."
-            }
-          ]
-        },
-      },
-      {
-        id: 3,
         imagenPortada: iconComputer,
         tituloPortada: "Diseñador UX-UI",
         contenidoPortada:
@@ -359,7 +289,7 @@ export default function TrabajaConNosotros() {
         },
       },
       {
-        id: 4,
+        id: 3,
         imagenPortada: iconAiRobot,
         tituloPortada: "Desarrollador APPIAN",
         contenidoPortada:
@@ -429,7 +359,7 @@ export default function TrabajaConNosotros() {
         },
       },
       {
-        id: 5,
+        id: 4,
         imagenPortada: iconAirPlane,
         tituloPortada: "Analistas de Riesgo TI ",
         contenidoPortada:
@@ -499,7 +429,7 @@ export default function TrabajaConNosotros() {
         },
       },
       {
-        id: 6,
+        id: 5,
         imagenPortada: iconAirPlane,
         tituloPortada: "Director de proyecto",
         contenidoPortada:

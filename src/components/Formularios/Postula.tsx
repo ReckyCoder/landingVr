@@ -1,158 +1,138 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Postula() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [telefono, setTelefono] = useState("");
   const [puestoPostulacion, setPuestoPostulacion] = useState("");
+  const [profesion, setProfesion] = useState("");
+  const [experiencia, setExperiencia] = useState("");
+  const [renta, setRenta] = useState("");
+
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [canSubmit, setCanSubmit] = useState(false);
+  const [mensaje, setMensaje] = useState("");
+  const [cvNombre, setCvNombre] = useState<string>(""); 
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-  // Validar email con regex simple
+  // Validar email
   useEffect(() => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     setIsValidEmail(emailRegex.test(email));
   }, [email]);
 
-  // Validar que nombre no esté vacío y email válido
+  // Validar todos los campos obligatorios
   useEffect(() => {
     setCanSubmit(
       name.trim() !== "" &&
         isValidEmail &&
         telefono.trim() !== "" &&
-        puestoPostulacion.trim() !== ""
+        puestoPostulacion.trim() !== "" &&
+        profesion.trim() !== "" &&
+        experiencia.trim() !== "" &&
+        renta.trim() !== "" &&
+        cvFile !== null
     );
-  }, [name, isValidEmail]);
+  }, [name, isValidEmail, telefono, puestoPostulacion, profesion, experiencia, renta, cvFile]);
+
+  // Manejar envío del formulario
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!canSubmit) return;
+
+    const formData = new FormData();
+    formData.append("nombre", name);
+    formData.append("email", email);
+    formData.append("telefono", telefono);
+    formData.append("puesto", puestoPostulacion);
+    formData.append("profesion", profesion);
+    formData.append("experiencia", experiencia);
+    formData.append("renta", renta);
+
+    if (cvFile) {
+      formData.append("cv", cvFile);
+    }
+
+    try {
+      const response = await fetch("https://test5.vrdigitaltech.cl//api/upload.php", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.text();
+      setMensaje(result);
+    } catch (error) {
+      console.error(error);
+      setMensaje("Error al enviar la postulación.");
+    }
+  };
+
+  const handleFileClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setCvFile(e.target.files[0]);
+      setCvNombre(e.target.files[0].name);
+    }
+  };
 
   return (
-    <section
-      id="contactosection"
-      className="py-16 bg-white h-auto md:h-[736px]  content-center"
-    >
+    <section id="contactosection" className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-12">
-        {/* Columna de información de contacto */}
+        {/* Columna de información */}
         <div className="md:w-1/2 space-y-4 flex flex-col gap-10">
-          <h2 className="font-normal text-[41px] leading-[50px] tracking-normal">
-            Postula
-          </h2>
-          <p className="colorGray2 font-normal text-[16px] leading-[26.5px] tracking-normal">
-            En VR Group estamos constantemente buscando gente apasionada por lo
-            que hace y capaz de aportar a nuestro equipo. Si te interesa ser
-            parte de nuestra agencia, revisa los puestos disponibles o envíanos
-            tu CV .
-          </p>
-
-          <p className="text-blue-600">
-            <a
-              href="tel:+56961928852"
-              className="hover:underline  font-light text-[30px] leading-[41px] tracking-normal"
-            >
-              (+56) 9 6192 8852
-            </a>
-          </p>
-          <p className="text-blue-600">
-            <a
-              href="mailto:contacto@vrgroup.cl"
-              className="hover:underline font-light text-[16px] leading-[26px] tracking-normal colorGray3"
-            >
-              contacto@vrgroup.cl
-            </a>
+          <h2 className="font-normal text-[41px] leading-[50px]">Postula</h2>
+          <p className="colorGray2 text-[16px] leading-[26.5px]">
+            En VR Group estamos constantemente buscando gente apasionada...
           </p>
         </div>
 
         {/* Columna del formulario */}
         <div className="md:w-1/2 space-y-6">
-          <form
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              if (canSubmit) {
-                //alert("Formulario enviado!");
-              }
-            }}
-          >
-            <div>
-              <input
-                type="text"
-                id="contactName"
-                name="name"
-                placeholder="Nombre"
-                required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <input
-                type="email"
-                id="contactEmail"
-                name="email"
-                placeholder="Correo Electrónico"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <input
-                type="text"
-                id="telefono"
-                name="name"
-                placeholder="Telefono"
-                required
-                value={telefono}
-                onChange={(e) => setTelefono(e.target.value)}
-                className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <input type="text" placeholder="Nombre" required value={name} onChange={(e) => setName(e.target.value)} className="w-full border p-3 rounded-md"/>
+            <input type="email" placeholder="Correo Electrónico" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full border p-3 rounded-md"/>
+            <input type="text" placeholder="Teléfono" required value={telefono} onChange={(e) => setTelefono(e.target.value)} className="w-full border p-3 rounded-md"/>
+            
+            <select required value={puestoPostulacion} onChange={(e) => setPuestoPostulacion(e.target.value)} className="w-full border p-3 rounded-md">
+              <option value="">Seleccione un puesto</option>
+              <option value="Desarrollador Full Stack Semi Senior">Desarrollador Full Stack Semi Senior</option>
+              <option value="Diseñador UX-UI">Diseñador UX-UI</option>
+              <option value="Diseñador UX-UI">Desarrollador APPIAN</option>
+              <option value="Diseñador UX-UI">Analista de Riesgo</option>
+              <option value="Diseñador UX-UI">Director de Proyecto</option>
+            </select>
 
-            <div>
-              <input
-                type="text"
-                id="postulacion"
-                name="name"
-                placeholder="Puesto de postulación"
-                required
-                value={puestoPostulacion}
-                onChange={(e) => setPuestoPostulacion(e.target.value)}
-                className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <textarea
-                id="contactMessage"
-                name="message"
-                rows={6}
-                placeholder="Cuéntanos..."
-                required
-                className="w-full border border-gray-300 p-3 rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            <input type="text" placeholder="Profesión" required value={profesion} onChange={(e) => setProfesion(e.target.value)} className="w-full border p-3 rounded-md"/>
+            <input type="text" placeholder="Años de experiencia" required value={experiencia} onChange={(e) => setExperiencia(e.target.value)} className="w-full border p-3 rounded-md"/>
+            <input type="text" placeholder="Pretensiones de renta" required value={renta} onChange={(e) => setRenta(e.target.value)} className="w-full border p-3 rounded-md"/>
 
             <div className="container-postulacion-btns flex gap-5">
-              <button
-                type="submit"
-                className="colorRed  cursor-pointer   border border-red-500 text-white px-6 py-3 rounded-[20px] font-semibold  transition-colors disabled:opacity-50"
-                disabled={!canSubmit}
-              >
-                <p className="font-bold text-[14px] leading-[14px] tracking-normal">
+              {/* Subida de CV */}
+              <div className="flex gap-5 items-center">
+                <button
+                  type="button"
+                  onClick={handleFileClick}
+                  className="bg-red-600 text-white px-6 py-3 rounded-[20px] disabled:opacity-50 transition duration-200 cursor-pointer hover:shadow-lg hover:bg-red-700">
                   Cargar CV
-                </p>
-              </button>
+                </button>
 
-              <button
-                type="submit"
-                className=" cursor-pointer  bg-red-600 text-white px-6 py-3 rounded-[20px] font-semibold hover:bg-red-700 transition-colors disabled:opacity-50"
-                disabled={!canSubmit}
-              >
-                <p className="font-bold text-[14px] leading-[14px] tracking-normal">
-                  Enviar postulación
-                </p>
+                {cvNombre && <span className="text-sm text-gray-700">{cvNombre}</span>}
+                <input type="file" name="cv" accept=".pdf,.doc,.docx" required ref={fileInputRef} onChange={handleFileChange} style={{ display: "none" }}/>
+              </div>
+
+              <button type="submit" disabled={!canSubmit} 
+              className="bg-red-600 text-white px-6 py-3 rounded-[20px] disabled:opacity-50 transition duration-200 cursor-pointer hover:shadow-lg hover:bg-red-700">
+                Enviar postulación
               </button>
             </div>
           </form>
+
+          {mensaje && <div className="mt-4 font-semibold text-gray-700">{mensaje}</div>}
         </div>
       </div>
     </section>

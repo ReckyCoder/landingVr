@@ -6,6 +6,7 @@ import Nosotros from "./pages/nosotros/Nosotros";
 import ServiciosDetalle from "./pages/serviciosDetalle/ServiciosDetalle";
 import Hablemos from "./pages/hablemos/Hablemos";
 import TrabajaConNosotros from "./pages/trabajaConNosotros/TrabajaConNosotros";
+import Solicitudes from "./pages/solicitudes/Solicitudes";
 
 export default function Router() {
   return (
@@ -21,6 +22,7 @@ export default function Router() {
             element={<TrabajaConNosotros />}
           />
           <Route path="/hablemos" element={<Hablemos />} />
+          <Route path="/solicitudes" element={<Solicitudes />} />
         </Route>
       </Routes>
     </BrowserRouter>

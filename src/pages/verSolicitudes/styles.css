@@ -1,0 +1,103 @@
+.postulaciones-container {
+  padding: 200px 24px 24px 24px;
+  font-family: Arial, sans-serif;
+}
+
+.postulaciones-container h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Tabla */
+.postulaciones-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.postulaciones-table thead {
+  background-color: #f9fafb;
+}
+
+.postulaciones-table th {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  font-weight: bold;
+  text-align: left;
+  color: #555;
+}
+
+.postulaciones-table td {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  color: #444;
+}
+
+.postulaciones-table tr:hover {
+  background-color: #f3f4f6;
+}
+
+/* Celda vacía */
+.postulaciones-empty {
+  padding: 16px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+/* Botón de descarga */
+.btn-descargar {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-descargar:hover {
+  background-color: #2563eb;
+}
+
+.pagination {
+  margin-top: 16px;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-size-selector {
+  margin-bottom: 10px;
+}
+.page-size-selector select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+
